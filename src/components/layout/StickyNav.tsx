@@ -1,6 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import type { User } from '@supabase/supabase-js';
+import { createClient } from '@/lib/supabase/client';
+import LoginButton from '@/components/auth/LoginButton';
+import UserMenu from '@/components/auth/UserMenu';
 
 const navLinks: { label: string; href: string; colorVar: string }[] = [
   { label: 'Meta',       href: '#meta',    colorVar: 'var(--gold)' },
@@ -18,6 +22,22 @@ const navLinks: { label: string; href: string; colorVar: string }[] = [
 
 export default function StickyNav() {
   const navRef = useRef<HTMLElement>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const supabase = createClient();
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      setUser(user);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   useEffect(() => {
     const hero = document.getElementById('hero');
@@ -65,6 +85,9 @@ export default function StickyNav() {
             {link.label}
           </a>
         ))}
+        <div className="nav-auth">
+          {user ? <UserMenu user={user} /> : <LoginButton />}
+        </div>
       </div>
     </nav>
   );
