@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D4 Lord of Hatred — Complete Build Encyclopedia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0c;--bg2:#111115;--bg3:#1a1a20;--text:#c8c4b8;--text-dim:#6e6a5e;--text-bright:#ede8d8;--gold:#c9a84c;--gold-dim:#8a6f2e;--gold-bright:#f0d67a;--red-bright:#d44040;--ember:#e85d26;--ember-dim:#9e3a10;--barb:#c94a3a;--warlock:#7b3fa0;--paladin:#d4a942;--rogue:#3aa87c;--sorc:#5ba3d9;--druid:#6b9e3a;--necro:#7ab0a0;--sb:#d98a30;--font-d:'Cinzel',serif;--font-b:'Crimson Text',serif;--font-m:'JetBrains Mono',monospace}
+html{scroll-behavior:smooth;background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:17px;line-height:1.7;overflow-x:hidden}
+body{min-height:100vh}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+.c{max-width:920px;margin:0 auto;padding:0 24px}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;mix-blend-mode:overlay}
+.embers{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.ep{position:absolute;width:3px;height:3px;background:var(--ember);border-radius:50%;box-shadow:0 0 6px var(--ember),0 0 12px var(--ember-dim);opacity:0;animation:ef linear infinite}
+@keyframes ef{0%{transform:translateY(100vh) translateX(0) scale(1);opacity:0}10%{opacity:.6}90%{opacity:.3}100%{transform:translateY(-10vh) translateX(40px) scale(.3);opacity:0}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,12,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.12);transform:translateY(-100%);transition:transform .4s ease}
+.nav.visible{transform:translateY(0)}
+.ni{display:flex;align-items:center;gap:6px;padding:10px 20px;max-width:1200px;margin:0 auto;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ni::-webkit-scrollbar{display:none}
+.nb{font-family:var(--font-d);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);white-space:nowrap;margin-right:8px;flex-shrink:0}
+.nl{font-family:var(--font-d);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;padding:5px 10px;border-radius:4px;white-space:nowrap;transition:all .3s;flex-shrink:0;border-left:2px solid transparent}
+.nl:hover{color:var(--gold);background:rgba(201,168,76,.08)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to bottom,transparent,var(--bg))}
+.he{font-family:var(--font-d);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ember);margin-bottom:12px;animation:fu .8s ease both}
+.ht{font-family:var(--font-d);font-size:clamp(2.2rem,7vw,4.2rem);font-weight:900;color:var(--text-bright);line-height:1.1;margin-bottom:10px;animation:fu .8s ease .15s both}
+.hs{font-family:var(--font-d);font-size:clamp(.85rem,2.5vw,1.2rem);font-weight:400;color:var(--gold);letter-spacing:.08em;margin-bottom:24px;animation:fu .8s ease .3s both}
+.hd{max-width:620px;font-size:1rem;color:var(--text-dim);animation:fu .8s ease .45s both}
+.hsc{position:absolute;bottom:36px;z-index:1;animation:fu .8s ease .6s both}
+.hsc span{display:block;font-family:var(--font-d);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px}
+.hsl{width:1px;height:36px;background:linear-gradient(to bottom,var(--gold-dim),transparent);margin:0 auto;animation:sp 2s ease infinite}
+@keyframes sp{0%,100%{opacity:.3;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.3)}}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .65s cubic-bezier(.4,0,.2,1),transform .65s cubic-bezier(.4,0,.2,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+.sg .rv:nth-child(1){transition-delay:.04s}.sg .rv:nth-child(2){transition-delay:.08s}.sg .rv:nth-child(3){transition-delay:.12s}.sg .rv:nth-child(4){transition-delay:.16s}.sg .rv:nth-child(5){transition-delay:.2s}.sg .rv:nth-child(6){transition-delay:.24s}.sg .rv:nth-child(7){transition-delay:.28s}.sg .rv:nth-child(8){transition-delay:.32s}
+.sec{padding:80px 0;position:relative}.sec+.sec{border-top:1px solid rgba(201,168,76,.06)}
+.sl{font-family:var(--font-d);font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:var(--ember);margin-bottom:6px}
+.st{font-family:var(--font-d);font-size:clamp(1.5rem,4vw,2.2rem);font-weight:700;color:var(--text-bright);margin-bottom:12px;line-height:1.2}
+.sd{font-size:1rem;color:var(--text-dim);max-width:650px;margin-bottom:32px}
+.cs{padding:60px 0 80px;position:relative}
+.cs::before{content:'';position:absolute;top:0;left:0;right:0;height:1px}
+.ch{display:flex;align-items:center;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.ci{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:1.1rem;font-weight:900;color:#fff;flex-shrink:0}
+.ctt{font-family:var(--font-d);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:900;line-height:1.15}
+.csb{font-family:var(--font-d);font-size:.8rem;color:var(--text-dim);font-weight:400;letter-spacing:.05em;margin-bottom:20px}
+.co{font-size:1rem;color:var(--text);max-width:700px;margin-bottom:32px;line-height:1.75}.co strong{color:var(--text-bright)}
+.mb{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:16px;margin:16px 0}
+.mb h4{font-family:var(--font-d);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.mb p{font-size:.88rem;color:var(--text);line-height:1.6}
+.bd{margin:16px 0;border:1px solid rgba(255,255,255,.06);border-radius:10px;overflow:hidden}
+.bdh{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--bg2);cursor:pointer;user-select:none;transition:background .3s}
+.bdh:hover{background:var(--bg3)}
+.bdh h3{font-family:var(--font-d);font-size:.85rem;font-weight:700;color:var(--text-bright)}
+.bdt{font-size:1.1rem;color:var(--text-dim);transition:transform .3s}
+.bd.open .bdt{transform:rotate(180deg)}
+.bdb{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.bd.open .bdb{max-height:8000px}
+.bdc{padding:18px}
+.tg{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.tag{font-family:var(--font-m);font-size:.6rem;padding:2px 7px;border-radius:3px;background:rgba(255,255,255,.04);color:var(--text-dim);border:1px solid rgba(255,255,255,.06)}
+.tag.s{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.2);color:var(--gold-bright)}
+.tag.a{background:rgba(90,163,217,.08);color:#8bc4e0}
+.sb{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.ss{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:9px 11px;min-width:80px;flex:1}
+.ssl{font-family:var(--font-d);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim)}
+.ssn{font-family:var(--font-d);font-size:.62rem;font-weight:700;color:var(--text-bright);text-align:center}
+.sp{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0;align-items:center}
+.spt{font-family:var(--font-m);font-size:.68rem;padding:3px 7px;border-radius:3px;background:rgba(255,255,255,.04);color:var(--text);border:1px solid rgba(255,255,255,.06)}
+.spt.p{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.2);color:var(--gold-bright)}
+.sa{color:var(--text-dim);font-size:.6rem}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:16px 0}
+.gc{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:14px;transition:border-color .3s}
+.gc:hover{border-color:rgba(201,168,76,.15)}
+.gcl{font-family:var(--font-d);font-size:.42rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:2px}
+.gcn{font-family:var(--font-d);font-size:.78rem;font-weight:700;color:var(--gold-bright);margin-bottom:3px}
+.gcd{font-size:.78rem;color:var(--text-dim);line-height:1.4}
+.ph{margin:10px 0;padding:14px;border-radius:7px;background:var(--bg2);border:1px solid rgba(255,255,255,.04)}
+.phh{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.phn{font-family:var(--font-d);font-size:.72rem;font-weight:900;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0}
+.pht{font-family:var(--font-d);font-size:.78rem;font-weight:700;color:var(--text-bright)}
+.phl{font-family:var(--font-m);font-size:.62rem;color:var(--text-dim)}
+.phb{font-size:.88rem;color:var(--text);line-height:1.7}.phb strong{color:var(--text-bright)}
+.ca{border-left:3px solid var(--ember);background:rgba(232,93,38,.05);padding:12px 16px;border-radius:0 7px 7px 0;margin:14px 0;font-size:.88rem}
+.ca.w{border-left-color:var(--red-bright);background:rgba(212,64,64,.05)}
+.cal{font-family:var(--font-d);font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);margin-bottom:2px}
+.ca.w .cal{color:var(--red-bright)}
+.sh{font-family:var(--font-d);font-size:.88rem;font-weight:700;color:var(--text-bright);margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid rgba(201,168,76,.08)}
+.tt{width:100%;border-collapse:collapse;margin:20px 0;font-size:.82rem}
+.tt th{font-family:var(--font-d);font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-align:left;padding:9px 10px;border-bottom:1px solid rgba(201,168,76,.15)}
+.tt td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+.tt tr:hover td{background:rgba(255,255,255,.015)}
+.cl{list-style:none;margin:18px 0;counter-reset:ck}
+.cl li{position:relative;padding:9px 12px 9px 42px;margin:5px 0;background:var(--bg2);border-radius:6px;border:1px solid rgba(255,255,255,.04);font-size:.88rem;counter-increment:ck}
+.cl li::before{content:counter(ck);position:absolute;left:12px;top:50%;transform:translateY(-50%);font-family:var(--font-d);font-size:.62rem;font-weight:700;color:var(--gold);width:18px;height:18px;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold-dim);border-radius:3px}
+.lt{width:100%;border-collapse:collapse;margin:18px 0}
+.lt td{padding:7px 12px;border-bottom:1px solid rgba(255,255,255,.04);font-size:.82rem}
+.lt td:first-child{font-weight:600;color:var(--text-bright);white-space:nowrap}
+.lt a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,168,76,.2)}
+.lt a:hover{border-color:var(--gold)}
+.ft{padding:50px 0;text-align:center;border-top:1px solid rgba(201,168,76,.06)}
+.ft p{font-size:.72rem;color:var(--text-dim)}
+.pb{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--ember),var(--gold));z-index:200;transform-origin:left;transform:scaleX(0)}
+.cg-b{background:linear-gradient(180deg,rgba(201,74,58,.07),transparent 35%)}.cg-b::before{background:linear-gradient(90deg,transparent,var(--barb),transparent)}
+.cg-w{background:linear-gradient(180deg,rgba(123,63,160,.07),transparent 35%)}.cg-w::before{background:linear-gradient(90deg,transparent,var(--warlock),transparent)}
+.cg-p{background:linear-gradient(180deg,rgba(212,169,66,.07),transparent 35%)}.cg-p::before{background:linear-gradient(90deg,transparent,var(--paladin),transparent)}
+.cg-r{background:linear-gradient(180deg,rgba(58,168,124,.07),transparent 35%)}.cg-r::before{background:linear-gradient(90deg,transparent,var(--rogue),transparent)}
+.cg-s{background:linear-gradient(180deg,rgba(91,163,217,.07),transparent 35%)}.cg-s::before{background:linear-gradient(90deg,transparent,var(--sorc),transparent)}
+.cg-d{background:linear-gradient(180deg,rgba(107,158,58,.07),transparent 35%)}.cg-d::before{background:linear-gradient(90deg,transparent,var(--druid),transparent)}
+.cg-n{background:linear-gradient(180deg,rgba(122,176,160,.07),transparent 35%)}.cg-n::before{background:linear-gradient(90deg,transparent,var(--necro),transparent)}
+.cg-sb{background:linear-gradient(180deg,rgba(217,138,48,.07),transparent 35%)}.cg-sb::before{background:linear-gradient(90deg,transparent,var(--sb),transparent)}
+@media(max-width:640px){html{font-size:15px}.c{padding:0 14px}.sb{gap:4px}.ss{min-width:68px;padding:6px 7px}.gg{grid-template-columns:1fr}.ni{padding:8px 14px}.ph{padding:10px}}
+</style>
+</head>
+<body>
+<div class="pb" id="pb"></div>
+<div class="embers" id="em"></div>
+<nav class="nav" id="nav"><div class="ni"><span class="nb">D4 Encyclopedia</span><a href="#meta" class="nl">Meta</a><a href="#tips" class="nl">Tips</a><a href="#barb" class="nl" style="border-left-color:var(--barb)">Barb</a><a href="#warlock" class="nl" style="border-left-color:var(--warlock)">Warlock</a><a href="#paladin" class="nl" style="border-left-color:var(--paladin)">Paladin</a><a href="#rogue" class="nl" style="border-left-color:var(--rogue)">Rogue</a><a href="#sorc" class="nl" style="border-left-color:var(--sorc)">Sorc</a><a href="#druid" class="nl" style="border-left-color:var(--druid)">Druid</a><a href="#necro" class="nl" style="border-left-color:var(--necro)">Necro</a><a href="#sb" class="nl" style="border-left-color:var(--sb)">Spiritborn</a><a href="#endgame" class="nl">Endgame</a></div></nav>
+
+<header class="hero"><p class="he">Season 13 · Patch 3.0.1 · Lord of Hatred</p><h1 class="ht">Build Encyclopedia</h1><p class="hs">All 8 Classes · Every Viable Build · Level 1 → Torment IV</p><p class="hd">Cross-referenced from Maxroll, Icy Veins, Mobalytics, D4Builds, Game8, Wowhead, SkyCoach. Updated May 3, 2026.</p><div class="hsc"><span>Scroll</span><div class="hsl"></div></div></header>
+
+<!-- META -->
+<section class="sec" id="meta"><div class="c">
+<div class="rv"><p class="sl">Season 13 · Consensus Tier List</p><h2 class="st">Meta Snapshot</h2><p class="sd">Rankings aggregated from 6+ sources. Builds listed by cross-source consensus.</p></div>
+<div class="rv"><table class="tt"><thead><tr><th>Tier</th><th>Build</th><th>Class</th><th>Playstyle</th></tr></thead><tbody>
+<tr><td style="color:var(--gold-bright);font-weight:900">S+</td><td style="color:var(--text-bright)">Ball Lightning (Ballkuna)</td><td style="color:var(--sorc)">Sorcerer</td><td style="color:var(--text-dim)">Shock AoE / Screen clear</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S+</td><td style="color:var(--text-bright)">Death Trap</td><td style="color:var(--rogue)">Rogue</td><td style="color:var(--text-dim)">Trap burst / AoE nuke</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Whirlwind</td><td style="color:var(--barb)">Barbarian</td><td style="color:var(--text-dim)">Spin-to-win / Dust Devils</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Static Field Blizzard (Shockuna)</td><td style="color:var(--sorc)">Sorcerer</td><td style="color:var(--text-dim)">Lightning DoT / Unstable Currents</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Dance of Knives</td><td style="color:var(--rogue)">Rogue</td><td style="color:var(--text-dim)">Channel spin / Fan of Knives</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Apocalypse Warlock</td><td style="color:var(--warlock)">Warlock</td><td style="color:var(--text-dim)">Hellfire nuke / 100-stack ramp</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Dread Claws</td><td style="color:var(--warlock)">Warlock</td><td style="color:var(--text-dim)">Shadow AoE / Stealth positioning</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Ancient Leap / HotA</td><td style="color:var(--barb)">Barbarian</td><td style="color:var(--text-dim)">Fire melee / Summoner hybrid</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Auradin (Holy Light Aura)</td><td style="color:var(--paladin)">Paladin</td><td style="color:var(--text-dim)">Aura walk-through / Zero button</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Blessed Hammer (Hammerdin)</td><td style="color:var(--paladin)">Paladin</td><td style="color:var(--text-dim)">Orbiting hammers / Arbiter form</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Blazing Abyss</td><td style="color:var(--warlock)">Warlock</td><td style="color:var(--text-dim)">Permanent stealth / Abyss pulses</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Pulverize</td><td style="color:var(--druid)">Druid</td><td style="color:var(--text-dim)">Werebear slam / Overpower</td></tr>
+<tr><td style="color:var(--gold-bright);font-weight:900">S</td><td style="color:var(--text-bright)">Rabies Lacerate</td><td style="color:var(--druid)">Druid</td><td style="color:var(--text-dim)">Poison DoT / Werewolf spread</td></tr>
+<tr><td style="color:#8bc4e0;font-weight:700">A</td><td style="color:var(--text-bright)">Wing Strike · Thorns · Fist of Heavens · Zeal · Blessed Shield</td><td style="color:var(--paladin)">Paladin</td><td style="color:var(--text-dim)">Multiple viable archetypes</td></tr>
+<tr><td style="color:#8bc4e0;font-weight:700">A</td><td style="color:var(--text-bright)">Rapid Fire · Penetrating Shot · Barrage · Flurry</td><td style="color:var(--rogue)">Rogue</td><td style="color:var(--text-dim)">Ranged bow / Freeze-Shatter</td></tr>
+<tr><td style="color:#8bc4e0;font-weight:700">A</td><td style="color:var(--text-bright)">Abaddon Summoner · Blazing Scream · Tyrant's Grasp</td><td style="color:var(--warlock)">Warlock</td><td style="color:var(--text-dim)">Demon army / Hellfire / Demonform</td></tr>
+<tr><td style="color:#8bc4e0;font-weight:700">A</td><td style="color:var(--text-bright)">Hydra · Crackling Energy · Blizzard</td><td style="color:var(--sorc)">Sorcerer</td><td style="color:var(--text-dim)">Summon caster / Shock / Frost</td></tr>
+<tr><td style="color:#8bc4e0;font-weight:700">A</td><td style="color:var(--text-bright)">Shadowblight · Blood Wave · Summoner Zerg</td><td style="color:var(--necro)">Necromancer</td><td style="color:var(--text-dim)">Shadow DoT / Blood AoE / Minion army</td></tr>
+<tr><td style="color:#8bc4e0;font-weight:700">A</td><td style="color:var(--text-bright)">Wolf Companion · Cataclysm · Stormslide · Tornado</td><td style="color:var(--druid)">Druid</td><td style="color:var(--text-dim)">Pet / Storm / Hybrid</td></tr>
+<tr><td style="color:#8bc4e0;font-weight:700">A</td><td style="color:var(--text-bright)">Evade Eagle · Quill Volley · Payback</td><td style="color:var(--sb)">Spiritborn</td><td style="color:var(--text-dim)">Evade spam / Feather barrage / Counter</td></tr>
+<tr><td style="color:#a0a0a0">B</td><td colspan="3" style="color:var(--text-dim)">Tornado, Shred, Boulder, Lightning Storm, Hurricane, Werenado, Bone Spirit, Blood Lance, Army of Dead, Fireball, Frozen Orb, Twisting Blades, Heartseeker, Lunging Strike, Cleave, Spear of Heavens, Heaven's Fury, Sever</td></tr>
+</tbody></table></div>
+</div></section>
+
+<!-- TIPS -->
+<section class="sec" id="tips"><div class="c">
+<div class="rv"><p class="sl">All Classes</p><h2 class="st">Leveling & Systems Guide</h2></div>
+<div class="sg">
+<div class="ph rv"><div class="phb"><strong>Start on Hard difficulty.</strong> XP bonus is worth it with Helltide's 50% XP. Move up when elites die fast.</div></div>
+<div class="ph rv"><div class="phb"><strong>Complete the LoH campaign first.</strong> Unlocks War Plans, campaign skip for alts, Mercenaries, Horadric Cube, Talisman.</div></div>
+<div class="ph rv"><div class="phb"><strong>Save Obols until 70.</strong> Vendors give 850 item power at max level. Huge head start.</div></div>
+<div class="ph rv"><div class="phb"><strong>Horadric Cube.</strong> Upgrade common → legendary. Best for target-farming uniques (e.g., gloves → Gohr's or Dawnfire).</div></div>
+<div class="ph rv"><div class="phb"><strong>Talisman system.</strong> Equip Seal + 5 matching Charms (set bonus) + 1 Unique Charm. Endgame sets are build-defining.</div></div>
+<div class="ph rv"><div class="phb"><strong>Mercenaries.</strong> Hire 1 + 1 reinforcement. Raheir (tank/DR) and Varyana (attack speed) most common. Aldkin (Field of Languish) for DR option.</div></div>
+<div class="ph rv"><div class="phb"><strong>Runewords.</strong> Ritual + Invocation in weapons/armor. Key combos: Moni+Ceh (Vulnerable), Cem+Gar (Crit), Igni+Prid (auto Dark Prison), Cir+Ceh (Freeze+Vulnerable).</div></div>
+<div class="ph rv"><div class="phb"><strong>Level cap 70.</strong> Pit Tier 10 → Torment 1. 14 extra skill points from Renown/Season Ranks (83 total). Paragon opens at 70.</div></div>
+</div>
+</div></section>
+
+<!-- BARBARIAN -->
+<section class="cs cg-b" id="barb"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--barb),#7a2520)">B</div><h2 class="ctt" style="color:var(--barb)">Barbarian</h2></div><p class="csb">Arsenal System · Shouts · Fury · Berserking · Dust Devils</p>
+<div class="mb"><h4>Class Mechanic: Arsenal</h4><p>Assign weapons per skill. Technique slot = passive bonus from any weapon type. WW → Two-Handed Slashing (Furious bleed). Polearm Technique for damage at high HP.</p></div>
+<p class="co"><strong>Whirlwind</strong> — hold one button, fire conversion via Bursting (lvl 15), Dust Devils spawn automatically, Gohr's auto-fires Mighty Throw. <strong>HotA/Ancient Leap</strong> — fire melee summoner, Ancestral modifier spawns Ancients mimicking swings, generatorless (spam HotA only), Bul-Kathos' Pride 5pc + Arreat's Bearing for triple Ancients. <strong>Rend</strong> — bleed DoT, apply and move on. <strong>Lunging Strike</strong> — best zero-unique starter, transitions to WW/HotA at 70.</p></div>
+<div class="rv"><h3 class="sh">WW Skill Bar</h3><div class="sb"><div class="ss"><span class="ssl">Basic</span><span class="ssn">Lunging Strike</span></div><div class="ss"><span class="ssl">Core</span><span class="ssn">Whirlwind</span></div><div class="ss"><span class="ssl">Shout</span><span class="ssn">Rallying Cry</span></div><div class="ss"><span class="ssl">Shout</span><span class="ssn">War Cry</span></div><div class="ss"><span class="ssl">Shout</span><span class="ssn">Challenging</span></div><div class="ss"><span class="ssl">Ultimate</span><span class="ssn">Call of Ancients</span></div></div></div>
+<div class="rv"><div class="ca w"><p class="cal">Warning</p><p><strong>Do NOT start with Whirlwind.</strong> Fury costs make early WW miserable. Use Lunging Strike + HotA lvl 1–30, then transition once you have fury sustain.</p></div></div>
+<div class="rv"><h3 class="sh">WW Leveling Phases</h3>
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(201,74,58,.12);color:var(--barb)">1</div><div><div class="pht">Generator + Core</div><div class="phl">Levels 1–15</div></div></div><div class="phb">Lunging Strike → Enhanced → Battle. WW → Enhanced → Furious. Rallying Cry chain. War Cry → Power. <strong>Bursting at 15 = fire conversion.</strong></div></div>
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(201,74,58,.12);color:var(--barb)">2</div><div><div class="pht">Core Max + Transition</div><div class="phl">Levels 16–40</div></div></div><div class="phb">Max WW ranks 2–5. Max Lunging Strike. Ground Stomp for CC. Transition to WW as primary once you find <strong>Aspect of Anger Management</strong> from Obol glove gambles.</div></div>
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(201,74,58,.12);color:var(--barb)">3</div><div><div class="pht">Ultimate + Key Passives</div><div class="phl">Levels 40–55</div></div></div><div class="phb">Wrath of Berserker → Prime → Supreme. <strong>Unconstrained</strong> (extends Berserking). Swiftness, Pit Fighter, Counteroffensive, Aggressive Resistance, Prolific Fury, Endless Fury.</div></div>
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(201,74,58,.12);color:var(--barb)">4</div><div><div class="pht">Endgame Transition</div><div class="phl">Levels 55–70</div></div></div><div class="phb">Swap Ground Stomp → <strong>Iron Skin</strong> (procs Tibault's Unstoppable). Drop Lunging Strike. Add Call of Ancients. Gohr's + Tibault's + Crown of Lucion + Ring of Starless Skies. Imposing Presence, Martial Vigor, Booming Voice for remaining points.</div></div>
+</div>
+<div class="rv"><h3 class="sh">Key Gear (All Barb Builds)</h3><div class="gg">
+<div class="gc"><div class="gcl">WW · Gloves</div><div class="gcn">Gohr's Devastating Grips</div><div class="gcd">Auto Mighty Throw while spinning. Cube upgrade commons to target.</div></div>
+<div class="gc"><div class="gcl">WW · Pants</div><div class="gcn">Tibault's Will</div><div class="gcd">Fury sustain via Unstoppable from Iron Skin. Mandatory.</div></div>
+<div class="gc"><div class="gcl">HotA · Talisman</div><div class="gcn">Bul-Kathos' Pride (5pc)</div><div class="gcd">Reduced Fury, CDR, Ancient Skill damage, +1 Ancient per cast.</div></div>
+<div class="gc"><div class="gcl">HotA · Unique</div><div class="gcn">Arreat's Bearing</div><div class="gcd">+1 Ancient per non-Call skill cast. Triple Ancients.</div></div>
+<div class="gc"><div class="gcl">HotA · Chest</div><div class="gcn">The Relentless Heart</div><div class="gcd">New HotA chest. Ramping damage multiplier.</div></div>
+<div class="gc"><div class="gcl">Universal</div><div class="gcn">Ring of Starless Skies</div><div class="gcd">Resource cost reduction + offensive stats. Best ring for all Barb builds.</div></div>
+</div></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Strength</span><span class="sa">›</span><span class="spt">Crit Chance</span><span class="sa">›</span><span class="spt">Attack Speed</span><span class="sa">›</span><span class="spt">Fury Cost Red.</span><span class="sa">›</span><span class="spt">Max Life</span><span class="sa">›</span><span class="spt">Armor</span></div></div>
+</div></section>
+
+<!-- WARLOCK -->
+<section class="cs cg-w" id="warlock"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--warlock),#4a2070)">W</div><h2 class="ctt" style="color:var(--warlock)">Warlock</h2></div><p class="csb">Soul Shards · Wrath + Dominance · Shadowform · Demonform · Sigils</p>
+<div class="mb"><h4>Soul Shards</h4><p><strong>Mastermind</strong> (Laalish) — Abyss/stealth builds. Recasts don't break Shadowform, +30% Abyss in stealth. <strong>Ritualist</strong> (Vollach) — Occult/Overpower builds. Empowered Apocalypse. <strong>Vanguard</strong> — orbiting spell. Each has 2 Fragment upgrades.</p></div>
+<p class="co">Six distinct endgame builds. <strong>Blazing Abyss</strong> — permanent stealth, Abyss pulses. <strong>Apocalypse</strong> — 100-stack ramp → screen nuke, Hands of Worldbreaker makes it a Sigil skill. <strong>Dread Claws</strong> — best leveler, circular AoE from you AND demon. <strong>Abaddon Summoner</strong> — demon army, no uniques required. <strong>Blazing Scream</strong> — bouncing heads, Lesser Demon tag for unique synergies. <strong>Tyrant's Grasp</strong> — Demonform melee, Flesh of Abaddon talisman.</p></div>
+<div class="rv"><h3 class="sh">Dread Claws Leveling (Best Warlock Starter)</h3><div class="sb"><div class="ss"><span class="ssl">Basic</span><span class="ssn">Hellion Sting</span></div><div class="ss"><span class="ssl">Core</span><span class="ssn">Dread Claws</span></div><div class="ss"><span class="ssl">Mobility</span><span class="ssn">Nether Step</span></div><div class="ss"><span class="ssl">Summon</span><span class="ssn">Rampage</span></div><div class="ss"><span class="ssl">Resource</span><span class="ssn">Command Fallen</span></div><div class="ss"><span class="ssl">CC</span><span class="ssn">Dark Prison</span></div></div></div>
+<div class="rv">
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(123,63,160,.12);color:var(--warlock)">1</div><div><div class="pht">Basics</div><div class="phl">1–10</div></div></div><div class="phb">Hellion Sting (Wrath gen). <strong>Dread Claws</strong> (lvl 3) — frontal wave. <strong>Nether Step</strong> (lvl 4) — teleport + Shadowform. <strong>Rampage</strong> (lvl 8) — summon demon.</div></div>
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(123,63,160,.12);color:var(--warlock)">2</div><div><div class="pht">Encircling Terror</div><div class="phl">10–20</div></div></div><div class="phb"><strong>Encircling Terror</strong> (lvl 15) — Dread Claws → circular AoE around you AND your demon. <strong>Abyssal Titan</strong> (lvl 20) — reposition demon free. Max Dread Claws ranks.</div></div>
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(123,63,160,.12);color:var(--warlock)">3</div><div><div class="pht">Soul Shard + Resources</div><div class="phl">20–35</div></div></div><div class="phb"><strong>Command Fallen - Fallen Rush</strong> (lvl 30) — generates both Wrath AND Dominance. <strong>Dark Prison - Chain Aura</strong> — defense package. Complete Warlock quest → <strong>Mastermind Shard + Laalish</strong>. Drop Hellion Sting at 34.</div></div>
+<div class="ph"><div class="phh"><div class="phn" style="background:rgba(123,63,160,.12);color:var(--warlock)">4</div><div><div class="pht">Stealth Engine</div><div class="phl">35–70</div></div></div><div class="phb">Add <strong>Metamorphosis</strong> — attack while stealthed. <strong>Sigil of Subversion</strong> for Hex. Igni+Prid rune auto-casts Dark Prison → free bar slot. Farm <strong>Litany of Sable</strong> + <strong>Footfalls of the Waning World</strong>. Shadow of Harash + Rite of the Nameless double set in lategame.</div></div>
+</div>
+<div class="rv"><h3 class="sh">Key Gear</h3><div class="gg">
+<div class="gc"><div class="gcl">Dread Claws</div><div class="gcn">Litany of Sable</div><div class="gcd">Core Dread Claws unique. Cube upgrade to target.</div></div>
+<div class="gc"><div class="gcl">Apocalypse</div><div class="gcn">Hands of the Worldbreaker</div><div class="gcd">Turns Apocalypse into Sigil skill. Mandatory for that build.</div></div>
+<div class="gc"><div class="gcl">Universal</div><div class="gcn">Anathema of the Primes</div><div class="gcd">Converts Archfiend skills to Wrath cost. BiS for Tyrant's Grasp + others.</div></div>
+<div class="gc"><div class="gcl">Boots</div><div class="gcn">Footfalls of the Waning World</div><div class="gcd">Frequent teleports. Extends Rampage/Command Fallen duration.</div></div>
+<div class="gc"><div class="gcl">Talisman</div><div class="gcn">Shadow of Harash · Rite of the Nameless · Flesh of Abaddon · Horazon's Chains</div><div class="gcd">Build-specific sets. Shadow of Harash for Abyss, Rite for Sigil, Flesh for Demonform, Horazon's for Blazing Scream.</div></div>
+</div></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Willpower</span><span class="sa">›</span><span class="spt">Attack Speed</span><span class="sa">›</span><span class="spt">Crit Chance</span><span class="sa">›</span><span class="spt">Shadow/Fire Dmg</span><span class="sa">›</span><span class="spt">Max Life</span></div></div>
+</div></section>
+
+<!-- PALADIN -->
+<section class="cs cg-p" id="paladin"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--paladin),#9a7520)">P</div><h2 class="ctt" style="color:var(--paladin)">Paladin</h2></div><p class="csb">Oaths · Arbiter Form · Auras · Faith · Resolve</p>
+<div class="mb"><h4>Oaths & Arbiter Form</h4><p><strong>Disciple</strong> (most builds) — Disciple skill with CD → Arbiter form 4.5s. Arbiter = empowered Evade, damage scaling, Ascension buff. <strong>Judicator</strong> — Judgement detonation builds. <strong>Juggernaut</strong> — tank/thorns. <strong>Zealot</strong> — attack speed stacking. <strong>Resolve</strong> = defensive stacks, 20% DR while any remain.</p></div>
+<p class="co">Widest competitive spread of any class. Mobalytics has <strong>10 S-tier Paladin builds</strong>. <strong>Auradin</strong> — kill by running near enemies, Holy Light Aura scales with Attack Speed + Armor (Castle paragon node), Dawnfire + Sundered Knight + Griswald (Cube). <strong>Hammerdin</strong> — D2 classic, Disciple's Halo orbits hammers, Argent Veil auto-casts via Arbiter Evade, needs boots with "Attacks Reduce Evade CD". Also S-tier: Wing Strike, Thorns/Shield of Retribution, Fist of Heavens, Zeal, Brandish, Blessed Shield, Support.</p></div>
+<div class="rv"><h3 class="sh">Auradin Skill Bar</h3><div class="sb"><div class="ss"><span class="ssl">Mobility</span><span class="ssn">Falling Star</span></div><div class="ss"><span class="ssl">Aura</span><span class="ssn">Holy Light</span></div><div class="ss"><span class="ssl">Aura</span><span class="ssn">Fanaticism</span></div><div class="ss"><span class="ssl">Aura</span><span class="ssn">Defiance</span></div><div class="ss"><span class="ssl">Utility</span><span class="ssn">Advance</span></div><div class="ss"><span class="ssl">Ultimate</span><span class="ssn">Arbiter of Justice</span></div></div></div>
+<div class="rv"><h3 class="sh">Hammerdin Skill Bar</h3><div class="sb"><div class="ss"><span class="ssl">Basic</span><span class="ssn">Advance</span></div><div class="ss"><span class="ssl">Core</span><span class="ssn">Blessed Hammer</span></div><div class="ss"><span class="ssl">Mobility</span><span class="ssn">Falling Star</span></div><div class="ss"><span class="ssl">CC</span><span class="ssn">Condemn</span></div><div class="ss"><span class="ssl">Aura</span><span class="ssn">Fanaticism</span></div><div class="ss"><span class="ssl">Aura</span><span class="ssn">Defiance</span></div></div></div>
+<div class="rv"><h3 class="sh">Key Gear</h3><div class="gg">
+<div class="gc"><div class="gcl">Auradin · Gloves</div><div class="gcn">Dawnfire</div><div class="gcd">Holy Light → Fire damage/sec that grows per kill. Build-enabling.</div></div>
+<div class="gc"><div class="gcl">Auradin · Weapon</div><div class="gcn">Sundered Knight + Griswald</div><div class="gcd">Cube lets you run BOTH. Consecration = 160–200% Aura Potency.</div></div>
+<div class="gc"><div class="gcl">Hammerdin · Ring</div><div class="gcn">Argent Veil</div><div class="gcd">Auto-casts Blessed Hammer on Arbiter Evade. The Exodia piece.</div></div>
+<div class="gc"><div class="gcl">Hammerdin · Weapon</div><div class="gcn">Herald's Morningstar</div><div class="gcd">1H Mace boosting Blessed Hammer directly.</div></div>
+<div class="gc"><div class="gcl">Talisman</div><div class="gcn">Light's Epiphany (5pc)</div><div class="gcd">5pc: Arbiter casts ALL Ultimates + 500%× Disciple damage. Also: Cathan's Iron Conviction for Auradin, Righteous Will for boss pushing.</div></div>
+</div></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Strength</span><span class="sa">›</span><span class="spt">Attack Speed</span><span class="sa">›</span><span class="spt">Armor</span><span class="sa">›</span><span class="spt">CDR</span><span class="sa">›</span><span class="spt">Aura Potency</span><span class="sa">›</span><span class="spt">Max Life</span></div></div>
+</div></section>
+
+<!-- ROGUE -->
+<section class="cs cg-r" id="rogue"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--rogue),#1a6a4c)">R</div><h2 class="ctt" style="color:var(--rogue)">Rogue</h2></div><p class="csb">Combo Points · Energy · Imbuements · Specializations</p>
+<div class="mb"><h4>Specializations</h4><p>Unlock lvl 15. <strong>Combo Points</strong> — build 3 with Basic, consume for damage + Lucky Hit. <strong>Nilfur's Narrow Eye 5pc</strong> auto-triggers Heartseeker 3× per Core cast = no manual Combo Points needed. <strong>Inner Sight</strong> — 25%× Crit Damage proc.</p></div>
+<p class="co"><strong>Death Trap (S+)</strong> — highest burst in game, trap + nuke. <strong>Dance of Knives (S)</strong> — channel indefinitely, snapshot Combo Points, Fan of Knives shotgun. <strong>Rapid Fire (A)</strong> — 10 arrows + Ruckus ricochet, cleanest leveling→endgame pipeline. <strong>Penetrating Shot (A)</strong> — Confluence groups enemies, pierce all. <strong>Barrage (A)</strong> — Windforce unique. <strong>Flurry (A)</strong> — melee hybrid, Transporter dash. All use Cold Imbuement → Freeze → Shatter. Swap Overflow → Shadow Dancer once energy is solved.</p></div>
+<div class="rv"><h3 class="sh">Rapid Fire Skill Bar (Best Leveler)</h3><div class="sb"><div class="ss"><span class="ssl">Basic</span><span class="ssn">Heartseeker</span></div><div class="ss"><span class="ssl">Core</span><span class="ssn">Rapid Fire</span></div><div class="ss"><span class="ssl">Agility</span><span class="ssn">Dash</span></div><div class="ss"><span class="ssl">Subterfuge</span><span class="ssn">Dark Shroud</span></div><div class="ss"><span class="ssl">Imbuement</span><span class="ssn">Cold Imbuement</span></div><div class="ss"><span class="ssl">Ultimate</span><span class="ssn">Shadow Clone</span></div></div></div>
+<div class="rv"><h3 class="sh">Key Gear</h3><div class="gg">
+<div class="gc"><div class="gcl">Bow</div><div class="gcn">Eaglehorn</div><div class="gcd">Massive Rapid Fire/Pen Shot boost. Potential double hit.</div></div>
+<div class="gc"><div class="gcl">DoK</div><div class="gcn">Death's Pavane</div><div class="gcd">Up to 90%× damage for Dance of Knives.</div></div>
+<div class="gc"><div class="gcl">Ring</div><div class="gcn">Ring of Starless Skies</div><div class="gcd">50% Resource Cost Red. Enables infinite channeling.</div></div>
+<div class="gc"><div class="gcl">Weapon</div><div class="gcn">Azurewrath</div><div class="gcd">Explodes Frozen enemies from Cold Imbuement.</div></div>
+<div class="gc"><div class="gcl">Talisman</div><div class="gcn">Nilfur's Narrow Eye (5pc)</div><div class="gcd">Auto Heartseeker 3× per Core cast. No manual Combo Points.</div></div>
+</div></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Dexterity</span><span class="sa">›</span><span class="spt">Crit Chance</span><span class="sa">›</span><span class="spt">Attack Speed</span><span class="sa">›</span><span class="spt">Energy Cost Red.</span><span class="sa">›</span><span class="spt">Max Life</span></div></div>
+</div></section>
+
+<!-- SORCERER -->
+<section class="cs cg-s" id="sorc"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--sorc),#2a5a8a)">S</div><h2 class="ctt" style="color:var(--sorc)">Sorcerer</h2></div><p class="csb">Enchantments · Mana · Elemental Conversion · Unstable Currents · Crackling Energy</p>
+<div class="mb"><h4>Enchantment System + LoH Changes</h4><p>Slot skills for passive effects. LoH adds elemental conversion variants to every skill. <strong>Shock skill ranks</strong> are the meta stat — they scale damage, Unstable Currents duration, AND Crackling Energy generation simultaneously.</p></div>
+<p class="co"><strong>Ball Lightning / Ballkuna (S+)</strong> — consensus #1 overall build across all sources. Orbs travel slowly hitting everything repeatedly. Unstable Currents for screen-wide Crackling explosions. <strong>Static Field Blizzard / Shockuna (S)</strong> — Blizzard converted to Lightning variant, scales triple with Shock ranks. Fractured Winterglass chase unique. <strong>Hydra (A)</strong> — summon-caster turrets, fire/frost/lightning variants, great safety. <strong>Crackling Energy (A)</strong> — pure shock, low gear dependency. <strong>Fireball/Frozen Orb (B)</strong> — viable but lower ceiling than shock.</p></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Intelligence</span><span class="sa">›</span><span class="spt">Shock Skill Ranks</span><span class="sa">›</span><span class="spt">Crit Chance</span><span class="sa">›</span><span class="spt">Mana Cost Red.</span><span class="sa">›</span><span class="spt">CDR</span><span class="sa">›</span><span class="spt">Max Life</span></div></div>
+</div></section>
+
+<!-- DRUID -->
+<section class="cs cg-d" id="druid"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--druid),#3a5a1a)">D</div><h2 class="ctt" style="color:var(--druid)">Druid</h2></div><p class="csb">Spirit Boons · Shapeshifting · Companions · Storm · Form Selector</p>
+<div class="mb"><h4>LoH Changes</h4><p>New form selector node — pick Bear (tank) or Wolf (speed). Insatiable Fury cooldown removal for constant mobility. Spirit Boons grant passive bonuses.</p></div>
+<p class="co"><strong>Pulverize (S — Mobalytics)</strong> — Werebear slam, Overpower ground pound, simple and tanky. <strong>Rabies Lacerate (S — Icy Veins)</strong> — poison DoT werewolf, infect and spread plague. <strong>Wolf Companion (A)</strong> — pack leader pet build. <strong>Cataclysm (A)</strong> — storm ultimate. <strong>Stormslide (A)</strong> — hybrid storm+shape. <strong>Tornado (A–B)</strong> — classic storm. <strong>Shred (B)</strong> — werewolf melee. <strong>Boulder (B)</strong> — wrecking ball.</p></div>
+<div class="rv"><div class="ca"><p>Game8 dropped Druid to B-tier overall due to high Pit struggles vs other classes. Still viable for all non-leaderboard content.</p></div></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Willpower</span><span class="sa">›</span><span class="spt">Crit Chance</span><span class="sa">›</span><span class="spt">Companion/Storm Dmg</span><span class="sa">›</span><span class="spt">Spirit Cost Red.</span><span class="sa">›</span><span class="spt">Max Life</span></div></div>
+</div></section>
+
+<!-- NECROMANCER -->
+<section class="cs cg-n" id="necro"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--necro),#3a6a5a)">N</div><h2 class="ctt" style="color:var(--necro)">Necromancer</h2></div><p class="csb">Book of the Dead · Essence · Minions · Corpse Skills · Direct Command</p>
+<div class="mb"><h4>LoH Rework</h4><p>Largest power jump of any returning class. <strong>Direct minion control</strong> — point warriors/mages at targets. Book of the Dead keeps minions alive during sacrifice. <strong>Sever</strong> gets built-in teleport via Inexorable Reaper. Skeletal Mages → core slot. <strong>Undercrown</strong> pushes warrior cap past 20.</p></div>
+<p class="co"><strong>Shadowblight (A)</strong> — no-minion Shadow DoT. Stack Blight, Corpse Explosion, Ebonpiercer, Soulrift. Trigger Shadowblight passive ASAP. Attack Speed is king. <strong>Blood Wave (A)</strong> — Kessime's Legacy pants, massive AoE via Blood rework. <strong>Summoner/Zerg (A)</strong> — "Lazy Necro Zerg" with 20+ warriors via Undercrown. Direct command for elite focus. Mendeln explosions chain. <strong>Bone Spirit (B)</strong> — burst single-target. <strong>Blood Lance (B)</strong> — ranged tether. <strong>Army of Dead (B)</strong> — ultimate burst. <strong>Sever (B)</strong> — fast blaster with teleport.</p></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Intelligence</span><span class="sa">›</span><span class="spt">Crit Chance</span><span class="sa">›</span><span class="spt">Attack Speed</span><span class="sa">›</span><span class="spt">Shadow/Blood Dmg</span><span class="sa">›</span><span class="spt">Essence Cost Red.</span><span class="sa">›</span><span class="spt">Max Life</span></div></div>
+</div></section>
+
+<!-- SPIRITBORN -->
+<section class="cs cg-sb" id="sb"><div class="c">
+<div class="rv"><div class="ch"><div class="ci" style="background:linear-gradient(135deg,var(--sb),#8a5a10)">SB</div><h2 class="ctt" style="color:var(--sb)">Spiritborn</h2></div><p class="csb">Spirit Hall · Vigor · Guardian Spirits · Evade Mechanics</p>
+<div class="mb"><h4>Spirit Hall</h4><p>Primary + Secondary Guardian. <strong>Gorilla</strong> — all skills = Gorilla, Thorn damage, Barrier on attack. <strong>Eagle</strong> — evade resets, movement. <strong>Jaguar</strong> — max Ferocity, kill speed. <strong>Centipede</strong> — poison, sustain.</p></div>
+<p class="co">Under-the-radar this expansion. <strong>Evade Eagle (A)</strong> — evade spam with constant resets, Poison variant pushes high Pit. <strong>Quill Volley (A)</strong> — Rod of Kepeleke makes it Basic+Core. Gorilla primary + Jaguar secondary. Speed-farming king. <strong>Payback (A)</strong> — counter-based Gorilla tank. <strong>Rock Splitter (Leveling)</strong> — best Spiritborn leveler per Mobalytics.</p></div>
+<div class="rv"><div class="ca"><p>Thunder Spike evade reset mechanic may have been relocated. Watch hotfix notes.</p></div></div>
+<div class="rv"><h3 class="sh">Stat Priority</h3><div class="sp"><span class="spt p">Dexterity</span><span class="sa">›</span><span class="spt">Crit Chance</span><span class="sa">›</span><span class="spt">Attack Speed</span><span class="sa">›</span><span class="spt">Vigor Cost Red.</span><span class="sa">›</span><span class="spt">Max Life</span></div></div>
+</div></section>
+
+<!-- ENDGAME -->
+<section class="sec" id="endgame"><div class="c">
+<div class="rv"><p class="sl">Post Level 70</p><h2 class="st">Endgame Progression</h2></div>
+<ol class="cl sg">
+<li class="rv">Hit 70 → Pit Tier 10 → Torment 1</li>
+<li class="rv">Respec skill tree for endgame variant</li>
+<li class="rv">Paragon — Legendary nodes → Glyphs to 15 (radius) → Glyphs to 46 (secondary)</li>
+<li class="rv">Talisman — Legendary Seal (+1 Charm Slot) → class BiS charm set (5pc) + 1 Unique Charm</li>
+<li class="rv">Horadric Cube — upgrade commons → legendary for target-farming</li>
+<li class="rv">Runewords — Ritual + Invocation in weapons/armor</li>
+<li class="rv">Masterworking — weapon damage → key offensive affix → capstone</li>
+<li class="rv">Torment push — T1→T2→T3→T4. Ancestral gear = guaranteed Greater Affix</li>
+<li class="rv">War Plans — Helltides, Pit, Undercity, Infernal Hordes, Echoing Hatred</li>
+<li class="rv">Boss Ladder — Lair → Greater Lair → Tormented (Mythic Unique target farm)</li>
+</ol>
+</div></section>
+
+<!-- RESOURCES -->
+<section class="sec"><div class="c">
+<div class="rv"><h2 class="st">Source Links</h2>
+<table class="lt">
+<tr><td>Maxroll Tier List</td><td><a href="https://maxroll.gg/d4/tierlists/endgame-tier-list" target="_blank">maxroll.gg</a></td></tr>
+<tr><td>Icy Veins Tier List</td><td><a href="https://www.icy-veins.com/d4/guides/endgame-tier-list/" target="_blank">icy-veins.com</a></td></tr>
+<tr><td>Mobalytics Tier List</td><td><a href="https://mobalytics.gg/diablo-4/tier-list" target="_blank">mobalytics.gg</a></td></tr>
+<tr><td>D4Builds Planner</td><td><a href="https://d4builds.gg/" target="_blank">d4builds.gg</a></td></tr>
+<tr><td>SkyCoach Tier List</td><td><a href="https://skycoach.gg/blog/diablo-4/articles/diablo-4-best-builds-tier-list" target="_blank">skycoach.gg</a></td></tr>
+<tr><td>Game8 Class Tier</td><td><a href="https://game8.co/games/Diablo-4/archives/596766" target="_blank">game8.co</a></td></tr>
+<tr><td>Wowhead Builds</td><td><a href="https://www.wowhead.com/diablo-4/guide/classes" target="_blank">wowhead.com</a></td></tr>
+</table></div>
+</div></section>
+
+<footer class="ft"><p>Season 13 · Patch 3.0.1 · Lord of Hatred · Sources accessed May 3, 2026<br>Cross-referenced: Maxroll, Icy Veins, Mobalytics, D4Builds, Game8, Wowhead, SkyCoach, aoeah<br>Meta shifts with hotfixes — check tier lists weekly</p></footer>
+
+<script>
+(function(){const c=document.getElementById('em');for(let i=0;i<18;i++){const p=document.createElement('div');p.className='ep';p.style.left=Math.random()*100+'%';p.style.animationDuration=(7+Math.random()*9)+'s';p.style.animationDelay=Math.random()*12+'s';p.style.width=(2+Math.random()*3)+'px';p.style.height=p.style.width;c.appendChild(p)}})();
+(function(){const els=document.querySelectorAll('.rv');const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}})},{threshold:.06,rootMargin:'0px 0px -30px 0px'});els.forEach(el=>obs.observe(el))})();
+(function(){const nav=document.getElementById('nav');const hero=document.querySelector('.hero');new IntersectionObserver(([e])=>{nav.classList.toggle('visible',!e.isIntersecting)},{threshold:0}).observe(hero)})();
+(function(){const bar=document.getElementById('pb');let t=false;window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{const h=document.documentElement.scrollHeight-window.innerHeight;bar.style.transform='scaleX('+(h>0?window.scrollY/h:0)+')';t=false});t=true}})})();
+document.querySelectorAll('.nl').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+</body>
+</html>
