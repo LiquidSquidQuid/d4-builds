@@ -22,12 +22,9 @@
 |---|---|
 | Authorization | `https://oauth.battle.net/authorize` |
 | Token exchange | `https://oauth.battle.net/token` |
-| User info (US) | `https://us.api.blizzard.com/oauth/userinfo` |
-| User info (EU) | `https://eu.api.blizzard.com/oauth/userinfo` |
-| User info (KR) | `https://kr.api.blizzard.com/oauth/userinfo` |
-| User info (TW) | `https://tw.api.blizzard.com/oauth/userinfo` |
+| User info | `https://oauth.battle.net/userinfo` |
 
-**Important:** The authorize and token endpoints are region-agnostic (`oauth.battle.net`). The userinfo endpoint is regional. For a US-focused app, use the US endpoint. If you need multi-region support later, store the player's region preference.
+**Important:** All three endpoints use the region-agnostic `oauth.battle.net` domain. The older regional `us.api.blizzard.com/oauth/userinfo` URLs return 404 — do not use them.
 
 ---
 
@@ -81,7 +78,7 @@ grant_type=authorization_code
 ### Step 4: Fetch user info
 
 ```
-GET https://us.api.blizzard.com/oauth/userinfo
+GET https://oauth.battle.net/userinfo
 Authorization: Bearer <ACCESS_TOKEN>
 ```
 
@@ -118,7 +115,7 @@ Supabase supports custom OAuth providers via the dashboard. Battle.net is not a 
 | Client Secret | Your Battle.net app Client Secret |
 | Authorization URL | `https://oauth.battle.net/authorize` |
 | Token URL | `https://oauth.battle.net/token` |
-| UserInfo URL | `https://us.api.blizzard.com/oauth/userinfo` |
+| UserInfo URL | `https://oauth.battle.net/userinfo` |
 | Scopes | `openid` |
 
 4. Copy the **Callback URL** shown (read-only) — this is what you register as the redirect URI in the Battle.net developer portal.
