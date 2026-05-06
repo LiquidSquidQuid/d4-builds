@@ -2,13 +2,17 @@ import Link from 'next/link';
 import type { BuildWithDetails } from '@/lib/types/builds';
 import { classData } from '@/lib/constants/classes';
 import type { D4Class } from '@/lib/types/classes';
+import VoteButton from '@/components/community/VoteButton';
+import CommentThread from '@/components/community/CommentThread';
 
 interface BuildDetailProps {
   build: BuildWithDetails;
   isOwner: boolean;
+  userId?: string | null;
+  hasVoted?: boolean;
 }
 
-export default function BuildDetail({ build, isOwner }: BuildDetailProps) {
+export default function BuildDetail({ build, isOwner, userId, hasVoted }: BuildDetailProps) {
   const classMeta = classData[build.class as D4Class]?.meta;
   const activeSkills = build.skills
     .filter(s => !s.is_passive && s.slot)
@@ -27,6 +31,12 @@ export default function BuildDetail({ build, isOwner }: BuildDetailProps) {
       <div className="container">
         {/* Header */}
         <div className="build-detail-header">
+          <VoteButton
+            buildId={build.id}
+            initialVoteCount={build.vote_count}
+            initialHasVoted={hasVoted ?? false}
+            userId={userId ?? null}
+          />
           <div
             className="build-detail-class-badge"
             style={{ borderColor: classMeta?.colorHex ?? 'var(--gold-dim)' }}
@@ -168,6 +178,11 @@ export default function BuildDetail({ build, isOwner }: BuildDetailProps) {
               Edit Build
             </Link>
           </div>
+        )}
+
+        {/* Comments */}
+        {build.is_public && (
+          <CommentThread buildId={build.id} userId={userId ?? null} />
         )}
       </div>
     </div>

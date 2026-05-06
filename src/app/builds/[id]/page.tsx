@@ -30,8 +30,8 @@ export default async function BuildPage({ params }: Props) {
     notFound();
   }
 
-  // Fetch skills, gear, and author in parallel
-  const [skillsResult, gearResult, authorResult] = await Promise.all([
+  // Fetch skills, gear, author, and vote status in parallel
+  const [skillsResult, gearResult, authorResult, voteResult] = await Promise.all([
     supabase
       .from('build_skills')
       .select('*')
@@ -46,6 +46,14 @@ export default async function BuildPage({ params }: Props) {
       .select('display_name, battletag')
       .eq('id', build.user_id)
       .single(),
+    user
+      ? supabase
+          .from('build_votes')
+          .select('build_id')
+          .eq('build_id', id)
+          .eq('user_id', user.id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
   ]);
 
   const buildWithDetails: BuildWithDetails = {
@@ -56,6 +64,14 @@ export default async function BuildPage({ params }: Props) {
   };
 
   const isOwner = user?.id === build.user_id;
+  const hasVoted = !!voteResult.data;
 
-  return <BuildDetail build={buildWithDetails} isOwner={isOwner} />;
+  return (
+    <BuildDetail
+      build={buildWithDetails}
+      isOwner={isOwner}
+      userId={user?.id ?? null}
+      hasVoted={hasVoted}
+    />
+  );
 }

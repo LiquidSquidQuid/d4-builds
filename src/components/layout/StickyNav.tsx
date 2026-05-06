@@ -87,11 +87,9 @@ export default function StickyNav() {
           </a>
         ))}
         <div className="nav-auth">
-          {user && (
-            <Link href="/profile" className="nav-builds-link">
-              My Builds
-            </Link>
-          )}
+          <Link href="/builds" className="nav-builds-link">
+            Builds
+          </Link>
           {user ? <UserMenu user={user} /> : <LoginButton />}
         </div>
       </div>
