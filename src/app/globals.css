@@ -1794,6 +1794,227 @@ body::before {
   color: var(--vellum);
 }
 
+/* --- CHARACTER CARD --- */
+.character-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.character-card {
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.character-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.character-card-class-badge {
+  font-family: var(--f-display);
+  font-size: 0.82rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.character-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.character-card-name {
+  font-family: var(--f-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--vellum-bright);
+}
+
+.character-card-meta {
+  display: flex;
+  gap: 8px;
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  color: var(--vellum-dim);
+}
+
+.character-card-stats {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.character-card-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.character-card-stat-label {
+  font-family: var(--f-display);
+  font-size: 0.36rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+}
+
+.character-card-stat-input {
+  width: 52px;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--vellum-bright);
+  background: var(--ink-3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 3px 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.character-card-stat-input:focus {
+  border-color: var(--gold-dim);
+}
+
+.character-card-build {
+  margin-top: 8px;
+  font-size: 0.72rem;
+}
+
+.character-card-build-label {
+  font-family: var(--f-display);
+  font-size: 0.38rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  margin-right: 6px;
+}
+
+.character-card-build-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-family: var(--f-body);
+  transition: color 0.3s;
+}
+
+.character-card-build-link:hover {
+  color: var(--gold-bright);
+}
+
+.character-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.character-card-expand {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  color: var(--vellum-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 0;
+  transition: color 0.3s;
+}
+
+.character-card-expand:hover {
+  color: var(--gold);
+}
+
+.character-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* --- CHARACTER FORM --- */
+.character-form {
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.character-form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.character-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* --- PROGRESSION CHECKLIST --- */
+.progression-checklist {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.progression-header {
+  margin-bottom: 8px;
+}
+
+.progression-count {
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  color: var(--gold-dim);
+}
+
+.progression-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progression-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.progression-step-check {
+  margin-top: 3px;
+  accent-color: var(--gold);
+  flex-shrink: 0;
+}
+
+.progression-step-label {
+  font-size: 0.78rem;
+  color: var(--vellum);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.progression-step-completed .progression-step-label {
+  color: var(--vellum-dim);
+  text-decoration: line-through;
+}
+
+.progression-step-date {
+  font-family: var(--f-mono);
+  font-size: 0.58rem;
+  color: var(--gold-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 640px) {
   html { font-size: 15px; }
@@ -1809,6 +2030,9 @@ body::before {
   .skill-picker-slot { max-width: none; }
   .build-detail-header { gap: 12px; }
   .nav-builds-link { display: none; }
+  .character-card-header { flex-wrap: wrap; }
+  .character-card-stats { width: 100%; justify-content: flex-start; margin-top: 8px; }
+  .character-form-row { flex-direction: column; }
 }
 
 /* --- REDUCED MOTION --- */

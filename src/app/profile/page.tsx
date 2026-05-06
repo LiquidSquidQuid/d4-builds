@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import MyBuildsList from '@/components/builds/MyBuildsList';
+import MyCharactersList from '@/components/characters/MyCharactersList';
+import type { CharacterWithProgress } from '@/lib/types/characters';
 
 export const metadata = {
   title: 'Profile — D4 Builds',
@@ -15,17 +17,23 @@ export default async function ProfilePage() {
     redirect('/');
   }
 
-  const [profileResult, buildsResult] = await Promise.all([
+  const [profileResult, buildsResult, charactersResult] = await Promise.all([
     supabase.from('profiles').select('*').eq('id', user.id).single(),
     supabase
       .from('builds')
       .select('*')
       .eq('user_id', user.id)
       .order('updated_at', { ascending: false }),
+    supabase
+      .from('characters')
+      .select('*, progression_steps(*)')
+      .eq('user_id', user.id)
+      .order('updated_at', { ascending: false }),
   ]);
 
   const profile = profileResult.data;
   const builds = buildsResult.data ?? [];
+  const characters = (charactersResult.data ?? []) as CharacterWithProgress[];
 
   const battletag =
     profile?.battletag ??
@@ -67,7 +75,7 @@ export default async function ProfilePage() {
 
         <div className="profile-card">
           <h2>My Characters</h2>
-          <p className="profile-empty">No characters tracked yet. Character tracking coming soon.</p>
+          <MyCharactersList characters={characters} builds={builds} />
         </div>
       </div>
     </div>

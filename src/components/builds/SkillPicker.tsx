@@ -2,7 +2,27 @@
 
 import type { D4Class } from '@/lib/types/classes';
 import type { BuildSkillInput, BuildAction } from '@/lib/types/builds';
-import { CLASS_SKILLS, SKILL_CATEGORIES } from '@/lib/constants/skills';
+import { getLegacySkills, type SkillCategory } from '@/lib/constants/skills';
+
+const CATEGORY_LABELS: Record<SkillCategory, string> = {
+  basic: 'Basic',
+  core: 'Core',
+  defensive: 'Defensive',
+  brawling: 'Brawling',
+  weapon_mastery: 'Weapon Mastery',
+  companion: 'Companion',
+  ultimate: 'Ultimate',
+  key_passive: 'Key Passive',
+  passive: 'Passive',
+  archfiend: 'Archfiend',
+  sigil: 'Sigil',
+  aura: 'Aura',
+  valor: 'Valor',
+  justice: 'Justice',
+  agility: 'Agility',
+  subterfuge: 'Subterfuge',
+  imbuement: 'Imbuement',
+};
 
 interface SkillPickerProps {
   classSlug: D4Class;
@@ -19,7 +39,7 @@ const EMPTY_SKILL: BuildSkillInput = {
 };
 
 export default function SkillPicker({ classSlug, skills, dispatch }: SkillPickerProps) {
-  const availableSkills = CLASS_SKILLS[classSlug] ?? [];
+  const availableSkills = getLegacySkills(classSlug);
   const categories = [...new Set(availableSkills.map(s => s.category))];
 
   const handleSkillChange = (index: number, field: keyof BuildSkillInput, value: string | number | boolean | null) => {
@@ -71,7 +91,7 @@ export default function SkillPicker({ classSlug, skills, dispatch }: SkillPicker
               />
               <datalist id={`skills-${index}`}>
                 {categories.map(cat => (
-                  <optgroup key={cat} label={SKILL_CATEGORIES[cat]}>
+                  <optgroup key={cat} label={CATEGORY_LABELS[cat]}>
                     {availableSkills
                       .filter(s => s.category === cat)
                       .map(s => (
