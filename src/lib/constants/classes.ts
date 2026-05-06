@@ -8,7 +8,7 @@ const CLASS_DATA: ClassPageData[] = [
       name: 'Barbarian',
       abbr: 'B',
       color: 'var(--c-barb)',
-      colorHex: '#c94a3a',
+      colorHex: '#b34a2e',
       gradientClass: 'class-grad-barb',
       subtitle: 'Arsenal System · Shouts · Fury · Berserking · Dust Devils',
       mechanic: {
@@ -115,7 +115,7 @@ const CLASS_DATA: ClassPageData[] = [
       name: 'Warlock',
       abbr: 'W',
       color: 'var(--c-warlock)',
-      colorHex: '#7b3fa0',
+      colorHex: '#6f4290',
       gradientClass: 'class-grad-warlock',
       subtitle: 'Soul Shards · Wrath + Dominance · Shadowform · Demonform · Sigils',
       mechanic: {
@@ -292,7 +292,7 @@ const CLASS_DATA: ClassPageData[] = [
       name: 'Rogue',
       abbr: 'R',
       color: 'var(--c-rogue)',
-      colorHex: '#3aa87c',
+      colorHex: '#3e8a6a',
       gradientClass: 'class-grad-rogue',
       subtitle: 'Combo Points · Energy · Imbuements · Specializations',
       mechanic: {
@@ -362,7 +362,7 @@ const CLASS_DATA: ClassPageData[] = [
       name: 'Sorcerer',
       abbr: 'S',
       color: 'var(--c-sorc)',
-      colorHex: '#5ba3d9',
+      colorHex: '#4a86b8',
       gradientClass: 'class-grad-sorcerer',
       subtitle: 'Enchantments · Mana · Elemental Conversion · Unstable Currents · Crackling Energy',
       mechanic: {
@@ -395,7 +395,7 @@ const CLASS_DATA: ClassPageData[] = [
       name: 'Druid',
       abbr: 'D',
       color: 'var(--c-druid)',
-      colorHex: '#6b9e3a',
+      colorHex: '#6b8a3a',
       gradientClass: 'class-grad-druid',
       subtitle: 'Spirit Boons · Shapeshifting · Companions · Storm · Form Selector',
       mechanic: {
@@ -432,7 +432,7 @@ const CLASS_DATA: ClassPageData[] = [
       name: 'Necromancer',
       abbr: 'N',
       color: 'var(--c-necro)',
-      colorHex: '#7ab0a0',
+      colorHex: '#7a9a8a',
       gradientClass: 'class-grad-necromancer',
       subtitle: 'Book of the Dead · Essence · Minions · Corpse Skills · Direct Command',
       mechanic: {
@@ -465,7 +465,7 @@ const CLASS_DATA: ClassPageData[] = [
       name: 'Spiritborn',
       abbr: 'SB',
       color: 'var(--c-spiritborn)',
-      colorHex: '#d98a30',
+      colorHex: '#c87a30',
       gradientClass: 'class-grad-spiritborn',
       subtitle: 'Spirit Hall · Vigor · Guardian Spirits · Evade Mechanics',
       mechanic: {

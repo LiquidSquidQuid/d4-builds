@@ -10,7 +10,7 @@ export default function EndgameChecklist({ steps }: EndgameChecklistProps) {
     <section className="section" id="endgame">
       <div className="container">
         <ScrollReveal>
-          <p className="section-label">Post Level 70</p>
+          <span className="eyebrow">III &middot; The Long Road Ahead</span>
           <h2 className="section-title">Endgame Progression</h2>
         </ScrollReveal>
 

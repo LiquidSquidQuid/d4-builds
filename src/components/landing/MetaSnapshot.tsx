@@ -21,7 +21,7 @@ export default function MetaSnapshot({ tiers }: MetaSnapshotProps) {
     <section className="section" id="meta">
       <div className="container">
         <ScrollReveal>
-          <p className="section-label">Season 13 · Consensus Tier List</p>
+          <span className="eyebrow">I &middot; Season 13 &middot; Consensus Tier List</span>
           <h2 className="section-title">Meta Snapshot</h2>
           <p className="section-desc">
             Rankings aggregated from 6+ sources. Builds listed by cross-source consensus.

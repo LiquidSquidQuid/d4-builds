@@ -28,13 +28,17 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <div className="rule with-mark"><span className="rule-mark" /></div>
       <MetaSnapshot tiers={tierData} />
+      <div className="rule" />
       <LevelingTips tips={tipsData} />
+      <div className="rule with-mark"><span className="rule-mark" /></div>
 
       {CLASS_ORDER.map((slug) => (
         <ClassSection key={slug} data={classData[slug]} />
       ))}
 
+      <div className="rule with-mark"><span className="rule-mark" /></div>
       <EndgameChecklist steps={endgameSteps} />
 
       <section className="section">

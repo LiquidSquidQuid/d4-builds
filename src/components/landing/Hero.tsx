@@ -1,13 +1,17 @@
 export default function Hero() {
   return (
     <header className="hero" id="hero">
-      <p className="hero-eyebrow">Season 13 · Patch 3.0.1 · Lord of Hatred</p>
-      <h1 className="hero-title">Build Encyclopedia</h1>
-      <p className="hero-subtitle">All 8 Classes · Every Viable Build · Level 1 → Torment IV</p>
-      <p className="hero-desc">
-        Cross-referenced from Maxroll, Icy Veins, Mobalytics, D4Builds, Game8, Wowhead, SkyCoach.
-        Updated May 3, 2026.
+      <div className="hero-ember" aria-hidden="true" />
+      <span className="eyebrow">Season XIII &middot; Lord of Hatred</span>
+      <h1 className="hero-title display-xl">
+        Build <span className="gilded-text">Encyclopedia</span>
+      </h1>
+      <p className="hero-subtitle script-l">
+        All 8 Classes &middot; Every Viable Build &middot; Level 1 &rarr; Torment IV
       </p>
+      <div className="hero-meta mono">
+        Cross-referenced from Maxroll, Icy Veins, Mobalytics, D4Builds, Game8, Wowhead, SkyCoach.
+      </div>
       <div className="hero-scroll-cue">
         <span>Scroll</span>
         <div className="hero-scroll-line"></div>

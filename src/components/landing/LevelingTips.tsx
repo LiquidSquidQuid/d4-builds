@@ -10,7 +10,7 @@ export default function LevelingTips({ tips }: LevelingTipsProps) {
     <section className="section" id="tips">
       <div className="container">
         <ScrollReveal>
-          <p className="section-label">All Classes</p>
+          <span className="eyebrow">II &middot; The Common Wisdom</span>
           <h2 className="section-title">Leveling &amp; Systems Guide</h2>
         </ScrollReveal>
 
