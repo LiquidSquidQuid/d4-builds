@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import BuildCard from '@/components/builds/BuildCard';
@@ -5,6 +6,22 @@ import type { Build } from '@/lib/types/builds';
 
 interface Props {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const supabase = await createClient();
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('display_name, battletag')
+    .eq('id', id)
+    .single();
+
+  const name = profile?.battletag ?? profile?.display_name ?? 'Player';
+  return {
+    title: `${name}'s Profile`,
+    description: `View ${name}'s public Diablo 4 builds and stats.`,
+  };
 }
 
 export default async function PublicProfilePage({ params }: Props) {

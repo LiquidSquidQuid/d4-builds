@@ -259,7 +259,7 @@ export default function BuildEditor({ mode, buildId, initialData }: BuildEditorP
 
           {/* Error */}
           {error && (
-            <div className="build-editor-error">{error}</div>
+            <div className="build-editor-error" role="alert">{error}</div>
           )}
 
           {/* Submit */}

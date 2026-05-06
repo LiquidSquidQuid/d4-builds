@@ -24,7 +24,8 @@ interface Props {
 }
 
 export const metadata = {
-  title: 'Community Builds — D4 Builds',
+  title: 'Community Builds',
+  description: 'Browse, vote, and share Diablo 4 Season 13 builds from the community. Filter by class and sort by popularity.',
 };
 
 export default async function BuildFeedPage({ searchParams }: Props) {

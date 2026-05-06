@@ -6,7 +6,7 @@ import MyCharactersList from '@/components/characters/MyCharactersList';
 import type { CharacterWithProgress } from '@/lib/types/characters';
 
 export const metadata = {
-  title: 'Profile — D4 Builds',
+  title: 'Profile',
 };
 
 export default async function ProfilePage() {

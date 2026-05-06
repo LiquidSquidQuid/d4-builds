@@ -2,7 +2,7 @@ import AuthGuard from '@/components/auth/AuthGuard';
 import BuildEditor from '@/components/builds/BuildEditor';
 
 export const metadata = {
-  title: 'Create Build — D4 Builds',
+  title: 'Create Build',
 };
 
 export default async function NewBuildPage() {

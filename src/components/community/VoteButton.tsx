@@ -66,7 +66,7 @@ export default function VoteButton({ buildId, initialVoteCount, initialHasVoted,
       aria-label={hasVoted ? 'Remove vote' : 'Vote for this build'}
     >
       <span className="vote-button-icon">&#9650;</span>
-      <span className="vote-button-count">{voteCount}</span>
+      <span className="vote-button-count" aria-live="polite">{voteCount}</span>
     </button>
   );
 }

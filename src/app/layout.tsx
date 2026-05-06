@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 import StickyNav from "@/components/layout/StickyNav";
@@ -7,9 +8,26 @@ import ProgressBar from "@/components/layout/ProgressBar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "D4 Lord of Hatred — Complete Build Encyclopedia",
+  metadataBase: new URL("https://d4-builds.vercel.app"),
+  title: {
+    default: "D4 Lord of Hatred — Complete Build Encyclopedia",
+    template: "%s — D4 Builds",
+  },
   description:
     "All 8 classes, every viable build, level 1 to Torment IV. Season 13 Diablo 4 build guide.",
+  openGraph: {
+    type: "website",
+    siteName: "D4 Builds",
+    title: "D4 Lord of Hatred — Complete Build Encyclopedia",
+    description:
+      "All 8 classes, every viable build, level 1 to Torment IV. Season 13 Diablo 4 build guide.",
+  },
+  twitter: {
+    card: "summary",
+    title: "D4 Builds — Season 13 Encyclopedia",
+    description:
+      "All 8 classes, every viable build, level 1 to Torment IV.",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <StickyNav />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

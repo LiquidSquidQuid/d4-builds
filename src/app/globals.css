@@ -2198,6 +2198,172 @@ body::before {
   color: var(--vellum-dim);
 }
 
+/* --- ERROR / 404 PAGES --- */
+.error-page {
+  padding: 160px 0 96px;
+  text-align: center;
+}
+
+.error-page-eyebrow {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 0.52rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 16px;
+}
+
+.error-page-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--vellum-bright);
+  margin-bottom: 20px;
+}
+
+.error-page-rule {
+  width: 80px;
+  height: 1px;
+  margin: 0 auto 20px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.error-page-body {
+  font-family: var(--f-body);
+  font-size: 1rem;
+  color: var(--vellum-dim);
+  font-style: italic;
+  max-width: 400px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.error-page-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-page-link {
+  font-family: var(--f-display);
+  font-size: 0.42rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.error-page-link:hover {
+  color: var(--gold-bright);
+}
+
+.error-page-retry {
+  font-family: var(--f-display);
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vellum-bright);
+  background: var(--ember);
+  border: 1px solid var(--ember);
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.error-page-retry:hover {
+  background: var(--ember-dim);
+}
+
+/* --- LOADING SKELETONS --- */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.skeleton-block {
+  background: var(--ink-3);
+  border-radius: 4px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-title {
+  height: 28px;
+  width: 240px;
+  margin-bottom: 12px;
+}
+
+.skeleton-line {
+  height: 14px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.skeleton-line-medium {
+  height: 14px;
+  width: 60%;
+  margin-bottom: 8px;
+}
+
+.skeleton-line-short {
+  height: 14px;
+  width: 120px;
+  margin-bottom: 8px;
+}
+
+.skeleton-filters {
+  height: 32px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.skeleton-card {
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+
+.skeleton-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.skeleton-skill-slot {
+  width: 80px;
+  height: 56px;
+  border-radius: 4px;
+  flex: 1;
+}
+
+/* --- FOCUS & ACCESSIBILITY --- */
+:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Override for inputs that already have border-based focus */
+.build-editor-input:focus-visible,
+.build-editor-select:focus-visible,
+.build-editor-textarea:focus-visible {
+  outline: none;
+}
+
 /* --- CHARACTER CARD --- */
 .character-list {
   display: flex;

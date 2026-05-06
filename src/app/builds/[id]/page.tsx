@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import BuildDetail from '@/components/builds/BuildDetail';
@@ -5,6 +6,34 @@ import type { BuildWithDetails } from '@/lib/types/builds';
 
 interface Props {
   params: Promise<{ id: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const supabase = await createClient();
+  const { data: build } = await supabase
+    .from('builds')
+    .select('title, class, description, is_public')
+    .eq('id', id)
+    .single();
+
+  if (!build || !build.is_public) {
+    return { title: 'Build Not Found' };
+  }
+
+  const className = build.class.charAt(0).toUpperCase() + build.class.slice(1);
+  const desc = build.description
+    ? build.description.slice(0, 160)
+    : `A ${className} build for Diablo 4 Season 13.`;
+
+  return {
+    title: `${build.title} (${className})`,
+    description: desc,
+    openGraph: {
+      title: `${build.title} — ${className} Build`,
+      description: desc,
+    },
+  };
 }
 
 export default async function BuildPage({ params }: Props) {

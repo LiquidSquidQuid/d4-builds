@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const metadata = {
-  title: 'Edit Build — D4 Builds',
+  title: 'Edit Build',
 };
 
 export default async function EditBuildPage({ params }: Props) {
