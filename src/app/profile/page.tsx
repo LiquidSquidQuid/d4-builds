@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
+import MyBuildsList from '@/components/builds/MyBuildsList';
 
 export const metadata = {
   title: 'Profile — D4 Builds',
@@ -13,11 +15,17 @@ export default async function ProfilePage() {
     redirect('/');
   }
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', user.id)
-    .single();
+  const [profileResult, buildsResult] = await Promise.all([
+    supabase.from('profiles').select('*').eq('id', user.id).single(),
+    supabase
+      .from('builds')
+      .select('*')
+      .eq('user_id', user.id)
+      .order('updated_at', { ascending: false }),
+  ]);
+
+  const profile = profileResult.data;
+  const builds = buildsResult.data ?? [];
 
   const battletag =
     profile?.battletag ??
@@ -48,8 +56,13 @@ export default async function ProfilePage() {
         </div>
 
         <div className="profile-card">
-          <h2>My Builds</h2>
-          <p className="profile-empty">No builds yet. Build creation coming soon.</p>
+          <div className="profile-card-header">
+            <h2>My Builds</h2>
+            <Link href="/builds/new" className="login-btn">
+              + New Build
+            </Link>
+          </div>
+          <MyBuildsList builds={builds} />
         </div>
 
         <div className="profile-card">

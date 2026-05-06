@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import type { User } from '@supabase/supabase-js';
 import { createClient } from '@/lib/supabase/client';
 import LoginButton from '@/components/auth/LoginButton';
@@ -86,6 +87,11 @@ export default function StickyNav() {
           </a>
         ))}
         <div className="nav-auth">
+          {user && (
+            <Link href="/profile" className="nav-builds-link">
+              My Builds
+            </Link>
+          )}
           {user ? <UserMenu user={user} /> : <LoginButton />}
         </div>
       </div>

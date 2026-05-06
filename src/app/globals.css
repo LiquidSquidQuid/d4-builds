@@ -922,6 +922,878 @@ body::before {
   font-style: italic;
 }
 
+/* --- NAV BUILDS LINK --- */
+.nav-builds-link {
+  font-family: var(--f-display);
+  font-size: 0.42rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  text-decoration: none;
+  padding: 2px 8px;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-builds-link:hover {
+  color: var(--gold);
+}
+
+/* --- PROFILE CARD HEADER --- */
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.profile-card-header h2 {
+  margin-bottom: 0;
+}
+
+.profile-builds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- BUILD EDITOR --- */
+.build-editor {
+  padding: 120px 0 60px;
+  position: relative;
+}
+
+.build-editor-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--vellum-bright);
+  margin-bottom: 24px;
+}
+
+.build-editor-section-title {
+  font-family: var(--f-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 24px 0 12px;
+}
+
+.build-editor-field {
+  margin-bottom: 16px;
+}
+
+.build-editor-field-sm {
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+
+.build-editor-label {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 0.42rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  margin-bottom: 4px;
+}
+
+.build-editor-input,
+.build-editor-select,
+.build-editor-textarea {
+  width: 100%;
+  font-family: var(--f-body);
+  font-size: 0.88rem;
+  color: var(--vellum-bright);
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.build-editor-input:focus,
+.build-editor-select:focus,
+.build-editor-textarea:focus {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 6px rgba(201, 168, 76, 0.1);
+}
+
+.build-editor-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%236e6a5e' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.build-editor-textarea {
+  resize: vertical;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+.build-editor-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+/* Toggle */
+.build-editor-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.build-editor-toggle input {
+  display: none;
+}
+
+.build-editor-toggle-track {
+  width: 36px;
+  height: 20px;
+  background: var(--ink-3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.build-editor-toggle input:checked ~ .build-editor-toggle-track {
+  background: rgba(232, 93, 38, 0.3);
+  border-color: var(--ember-dim);
+}
+
+.build-editor-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--vellum-dim);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.build-editor-toggle input:checked ~ .build-editor-toggle-track .build-editor-toggle-thumb {
+  transform: translateX(16px);
+  background: var(--ember);
+}
+
+.build-editor-toggle-label {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  color: var(--vellum-dim);
+}
+
+/* Tags */
+.build-editor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.build-editor-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--vellum);
+}
+
+.build-editor-tag-remove {
+  background: none;
+  border: none;
+  color: var(--vellum-dim);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+.build-editor-tag-remove:hover {
+  color: var(--ember);
+}
+
+.build-editor-tag-input-wrap {
+  display: flex;
+  gap: 4px;
+}
+
+.build-editor-tag-input {
+  width: 120px;
+}
+
+.build-editor-tag-add {
+  background: var(--ink-3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--vellum-dim);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.build-editor-tag-add:hover {
+  color: var(--gold);
+}
+
+/* Actions */
+.build-editor-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.build-editor-submit {
+  font-family: var(--f-display);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vellum-bright);
+  background: var(--ember);
+  border: 1px solid var(--ember);
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.build-editor-submit:hover:not(:disabled) {
+  background: var(--ember-dim);
+  box-shadow: 0 0 12px rgba(232, 93, 38, 0.2);
+}
+
+.build-editor-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.build-editor-cancel {
+  font-family: var(--f-display);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.build-editor-cancel:hover {
+  border-color: var(--vellum-dim);
+  color: var(--vellum);
+}
+
+.build-editor-error {
+  background: rgba(212, 64, 64, 0.1);
+  border: 1px solid var(--blood-bright);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--blood-bright);
+  font-size: 0.82rem;
+  margin-top: 16px;
+}
+
+/* Gear editor grid */
+.gear-editor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+/* --- SKILL PICKER --- */
+.skill-picker {
+  margin: 16px 0;
+}
+
+.skill-picker-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-picker-slot {
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 160px;
+  flex: 1;
+  max-width: 220px;
+}
+
+.skill-picker-slot.is-passive {
+  border-color: rgba(201, 168, 76, 0.15);
+}
+
+.skill-picker-slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.skill-picker-slot-number {
+  font-family: var(--f-display);
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.skill-picker-remove {
+  background: none;
+  border: none;
+  color: var(--vellum-dim);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.skill-picker-remove:hover {
+  color: var(--ember);
+}
+
+.skill-picker-field {
+  margin-bottom: 6px;
+}
+
+.skill-picker-field .build-editor-input {
+  font-size: 0.78rem;
+  padding: 6px 8px;
+}
+
+.skill-picker-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.skill-picker-label {
+  font-family: var(--f-display);
+  font-size: 0.36rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+}
+
+.skill-picker-points {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.skill-picker-points-input {
+  width: 48px;
+  text-align: center;
+  font-size: 0.78rem !important;
+  padding: 4px 6px !important;
+}
+
+.skill-picker-slot-assign {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.skill-picker-slot-select {
+  width: 48px;
+  font-size: 0.78rem !important;
+  padding: 4px 6px !important;
+}
+
+.skill-picker-passive-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  color: var(--vellum-dim);
+}
+
+.skill-picker-passive-toggle input {
+  accent-color: var(--gold);
+}
+
+.skill-picker-add {
+  margin-top: 8px;
+  font-family: var(--f-display);
+  font-size: 0.42rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  background: none;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.skill-picker-add:hover {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+}
+
+/* --- GEAR SLOT EDITOR --- */
+.gear-slot-editor {
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.gear-slot-editor-label {
+  font-family: var(--f-display);
+  font-size: 0.42rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 6px;
+}
+
+.gear-slot-editor .build-editor-input {
+  font-size: 0.78rem;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+}
+
+.gear-slot-unique-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  color: var(--vellum-dim);
+  margin-bottom: 6px;
+}
+
+.gear-slot-unique-toggle input {
+  display: none;
+}
+
+.gear-slot-unique-pip {
+  font-size: 0.7rem;
+  color: var(--vellum-dim);
+  transition: color 0.3s;
+}
+
+.gear-slot-unique-pip.active {
+  color: var(--gold-bright);
+}
+
+.gear-slot-affixes {
+  margin-bottom: 6px;
+}
+
+.gear-slot-affix-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.gear-slot-affix-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--vellum);
+}
+
+.gear-slot-affix-remove {
+  background: none;
+  border: none;
+  color: var(--vellum-dim);
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.gear-slot-affix-remove:hover {
+  color: var(--ember);
+}
+
+.gear-slot-affix-add {
+  display: flex;
+  gap: 4px;
+}
+
+.gear-slot-affix-input {
+  flex: 1;
+  font-size: 0.72rem !important;
+  padding: 4px 6px !important;
+}
+
+.gear-slot-affix-btn {
+  background: var(--ink-3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--vellum-dim);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  transition: color 0.3s;
+}
+
+.gear-slot-affix-btn:hover {
+  color: var(--gold);
+}
+
+.gear-slot-notes {
+  font-size: 0.72rem !important;
+  padding: 4px 8px !important;
+  min-height: 36px !important;
+}
+
+/* --- BUILD DETAIL --- */
+.build-detail {
+  padding: 120px 0 60px;
+  position: relative;
+}
+
+.build-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.build-detail-class-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: var(--ink-3);
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.build-detail-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 700;
+  color: var(--vellum-bright);
+  margin-bottom: 2px;
+}
+
+.build-detail-meta {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  color: var(--vellum-dim);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.build-detail-meta-sep {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.build-detail-guide-link {
+  display: inline-block;
+  font-family: var(--f-display);
+  font-size: 0.42rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: color 0.3s;
+}
+
+.build-detail-guide-link:hover {
+  color: var(--gold);
+}
+
+.build-detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.build-detail-tag {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--vellum);
+}
+
+.build-detail-tag-visibility {
+  border-color: rgba(201, 168, 76, 0.2);
+  color: var(--gold-dim);
+}
+
+.build-detail-section {
+  margin: 20px 0;
+}
+
+.build-detail-section-title {
+  font-family: var(--f-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.build-detail-desc {
+  font-size: 0.92rem;
+  color: var(--vellum);
+  line-height: 1.6;
+}
+
+.build-detail-actions {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skill-slot-points {
+  font-family: var(--f-mono);
+  font-size: 0.5rem;
+  color: var(--gold-dim);
+}
+
+.gear-unique-pip {
+  color: var(--gold-bright);
+  font-size: 0.5rem;
+}
+
+.gear-card-affixes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin: 4px 0;
+}
+
+.gear-affix-tag {
+  font-family: var(--f-mono);
+  font-size: 0.58rem;
+  padding: 1px 5px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--vellum-dim);
+}
+
+/* --- BUILD CARD --- */
+.build-card {
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 8px;
+  padding: 14px;
+  transition: border-color 0.3s;
+}
+
+.build-card:hover {
+  border-color: rgba(201, 168, 76, 0.2);
+  border-left-color: inherit;
+}
+
+.build-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.build-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.build-card-class-badge {
+  font-family: var(--f-display);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.build-card-title {
+  font-family: var(--f-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--vellum-bright);
+}
+
+.build-card-desc {
+  font-size: 0.78rem;
+  color: var(--vellum-dim);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.build-card-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.build-card-meta {
+  font-family: var(--f-mono);
+  font-size: 0.6rem;
+  color: var(--vellum-dim);
+}
+
+.build-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.build-card-action-btn {
+  font-family: var(--f-display);
+  font-size: 0.38rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.build-card-action-btn:hover {
+  color: var(--gold);
+  border-color: var(--gold-dim);
+}
+
+.build-card-delete-btn:hover {
+  color: var(--blood-bright);
+  border-color: var(--blood-bright);
+}
+
+/* --- DELETE CONFIRM DIALOG --- */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog-box {
+  background: var(--ink-2);
+  border: 1px solid var(--gold-dim);
+  border-radius: 10px;
+  padding: 28px;
+  max-width: 400px;
+  width: calc(100% - 40px);
+}
+
+.dialog-title {
+  font-family: var(--f-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--vellum-bright);
+  margin-bottom: 10px;
+}
+
+.dialog-text {
+  font-size: 0.85rem;
+  color: var(--vellum);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.dialog-text strong {
+  color: var(--vellum-bright);
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.dialog-confirm-btn {
+  font-family: var(--f-display);
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--blood-bright);
+  border: 1px solid var(--blood-bright);
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.dialog-confirm-btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.dialog-confirm-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dialog-cancel-btn {
+  font-family: var(--f-display);
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vellum-dim);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dialog-cancel-btn:hover {
+  border-color: var(--vellum-dim);
+  color: var(--vellum);
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 640px) {
   html { font-size: 15px; }
@@ -929,8 +1801,14 @@ body::before {
   .skill-bar { gap: 4px; }
   .skill-slot { min-width: 68px; padding: 6px 7px; }
   .gear-grid { grid-template-columns: 1fr; }
+  .gear-editor-grid { grid-template-columns: 1fr; }
   .nav-inner { padding: 8px 14px; }
   .phase-block { padding: 10px; }
+  .build-editor-row { flex-direction: column; }
+  .skill-picker-slots { flex-direction: column; }
+  .skill-picker-slot { max-width: none; }
+  .build-detail-header { gap: 12px; }
+  .nav-builds-link { display: none; }
 }
 
 /* --- REDUCED MOTION --- */
