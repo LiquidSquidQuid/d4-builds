@@ -10,18 +10,23 @@ interface ClassSectionProps {
   data: ClassPageData;
 }
 
-export default function ClassSection({ data }: ClassSectionProps) {
+export default function ClassSection({ data, index }: ClassSectionProps & { index?: number }) {
   const { meta, skillBars, phases, callouts, gear, statPriority } = data;
+  const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
 
   return (
     <section
       className={`class-section ${meta.gradientClass}`}
       id={meta.slug}
+      data-nav-target={meta.slug}
     >
       <div className="container">
 
         {/* Class header */}
         <ScrollReveal>
+          {index !== undefined && (
+            <span className="eyebrow">{ROMAN[index]} &middot; The {meta.name}</span>
+          )}
           <div className="class-header">
             <div
               className="class-icon"
@@ -41,11 +46,13 @@ export default function ClassSection({ data }: ClassSectionProps) {
 
         {/* Mechanic box */}
         <ScrollReveal>
-          <div className="mechanic-box">
+          <div className="mechanic-box card">
             <h4>{meta.mechanic.title}</h4>
             <p>{meta.mechanic.body}</p>
           </div>
         </ScrollReveal>
+
+        <div className="rule" />
 
         {/* Overview */}
         <ScrollReveal>
@@ -56,15 +63,15 @@ export default function ClassSection({ data }: ClassSectionProps) {
         </ScrollReveal>
 
         {/* Skill bars */}
-        {skillBars.map((bar, index) => (
-          <ScrollReveal key={index}>
+        {skillBars.map((bar, i) => (
+          <ScrollReveal key={i}>
             <SkillBar title={bar.title} skills={bar.skills} />
           </ScrollReveal>
         ))}
 
         {/* Callouts */}
-        {callouts.map((callout, index) => (
-          <ScrollReveal key={index}>
+        {callouts.map((callout, i) => (
+          <ScrollReveal key={i}>
             <CalloutBox type={callout.type} label={callout.label}>
               <span dangerouslySetInnerHTML={{ __html: callout.body }} />
             </CalloutBox>
@@ -74,12 +81,13 @@ export default function ClassSection({ data }: ClassSectionProps) {
         {/* Leveling phases */}
         {phases && phases.length > 0 && (
           <>
+            <div className="rule" />
             <ScrollReveal>
               <h3 className="sub-heading">Leveling Phases</h3>
             </ScrollReveal>
             <div className="stagger-group">
-              {phases.map((phase, index) => (
-                <ScrollReveal key={index}>
+              {phases.map((phase, i) => (
+                <ScrollReveal key={i}>
                   <PhaseBlock phase={phase} colorVar={meta.color} />
                 </ScrollReveal>
               ))}
@@ -90,13 +98,14 @@ export default function ClassSection({ data }: ClassSectionProps) {
         {/* Gear grid */}
         {gear.length > 0 && (
           <>
+            <div className="rule" />
             <ScrollReveal>
               <h3 className="sub-heading">Key Gear</h3>
             </ScrollReveal>
             <ScrollReveal>
               <div className="gear-grid">
-                {gear.map((item, index) => (
-                  <GearCard key={index} item={item} />
+                {gear.map((item, i) => (
+                  <GearCard key={i} item={item} />
                 ))}
               </div>
             </ScrollReveal>

@@ -29,41 +29,31 @@ export default function MetaSnapshot({ tiers }: MetaSnapshotProps) {
         </ScrollReveal>
 
         <ScrollReveal>
-          <table className="tier-table">
-            <thead>
-              <tr>
-                <th>Tier</th>
-                <th>Build</th>
-                <th>Class</th>
-                <th>Playstyle</th>
-              </tr>
-            </thead>
-            <tbody>
-              {tiers.map((entry, index) => {
-                if (entry.isBTier) {
-                  return (
-                    <tr key={index}>
-                      <td style={{ color: '#a0a0a0' }}>B</td>
-                      <td colSpan={3} style={{ color: 'var(--vellum-dim)' }}>
-                        {entry.build}
-                      </td>
-                    </tr>
-                  );
-                }
-
+          <div className="ledger">
+            {tiers.map((entry, index) => {
+              if (entry.isBTier) {
                 return (
-                  <tr key={index}>
-                    <td style={{ color: entry.tierColor, fontWeight: entry.tierWeight }}>
-                      {entry.tier}
-                    </td>
-                    <td style={{ color: 'var(--vellum-bright)' }}>{entry.build}</td>
-                    <td style={{ color: CLASS_COLORS[entry.classSlug] }}>{entry.className}</td>
-                    <td style={{ color: 'var(--vellum-dim)' }}>{entry.playstyle}</td>
-                  </tr>
+                  <div key={index} className="ledger-row" style={{ borderLeftColor: 'var(--vellum-faint)' }}>
+                    <div className="ledger-rank" style={{ color: 'var(--vellum-dim)' }}>B</div>
+                    <div className="ledger-build" style={{ color: 'var(--vellum-dim)' }}>{entry.build}</div>
+                  </div>
                 );
-              })}
-            </tbody>
-          </table>
+              }
+
+              return (
+                <div
+                  key={index}
+                  className="ledger-row"
+                  style={{ borderLeftColor: CLASS_COLORS[entry.classSlug] }}
+                >
+                  <div className="ledger-rank" style={{ color: entry.tierColor }}>{entry.tier}</div>
+                  <div className="ledger-build">{entry.build}</div>
+                  <div className="ledger-class" style={{ color: CLASS_COLORS[entry.classSlug] }}>{entry.className}</div>
+                  <div className="ledger-meta">{entry.playstyle}</div>
+                </div>
+              );
+            })}
+          </div>
         </ScrollReveal>
       </div>
     </section>

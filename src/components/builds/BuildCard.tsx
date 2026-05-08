@@ -20,8 +20,8 @@ export default function BuildCard({ build, showActions, onDelete }: BuildCardPro
 
   return (
     <div
-      className="build-card"
-      style={{ borderLeftColor: classMeta?.colorHex ?? 'var(--gold-dim)' }}
+      className="build-card card"
+      style={{ borderLeftColor: classMeta?.colorHex ?? 'var(--gold-deep)' }}
     >
       <Link href={`/builds/${build.id}`} className="build-card-link">
         <div className="build-card-header">

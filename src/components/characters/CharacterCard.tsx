@@ -49,8 +49,8 @@ export default function CharacterCard({ character, builds, onDelete }: Character
 
   return (
     <div
-      className="character-card"
-      style={{ borderLeftColor: classMeta?.colorHex ?? 'var(--gold-dim)' }}
+      className="character-card card"
+      style={{ borderLeftColor: classMeta?.colorHex ?? 'var(--gold-deep)' }}
     >
       <div className="character-card-header">
         <span

@@ -7,7 +7,7 @@ interface PhaseBlockProps {
 
 export default function PhaseBlock({ phase, colorVar }: PhaseBlockProps) {
   return (
-    <div className="phase-block">
+    <div className="phase-block card">
       <div className="phase-header">
         <div
           className="phase-number"

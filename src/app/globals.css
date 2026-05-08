@@ -328,7 +328,7 @@ body::after {
 
 .nav-link:hover {
   color: var(--gold);
-  background: rgba(201, 168, 76, 0.08);
+  background: rgba(201, 161, 74, 0.08);
 }
 
 /* --- HERO --- */
@@ -365,7 +365,7 @@ body::after {
 
 .hero-title {
   font-family: var(--f-display);
-  font-size: clamp(2.2rem, 7vw, 4.2rem);
+  font-size: clamp(3rem, 11vw, 9rem);
   font-weight: 900;
   color: var(--vellum-bright);
   line-height: 1.1;
@@ -496,7 +496,7 @@ body::after {
 }
 
 .section + .section {
-  border-top: 1px solid rgba(201, 168, 76, 0.06);
+  border-top: 1px solid rgba(201, 161, 74, 0.06);
 }
 
 .section-label {
@@ -670,8 +670,8 @@ body::after {
 }
 
 .stat-tag.primary {
-  background: rgba(201, 168, 76, 0.1);
-  border-color: rgba(201, 168, 76, 0.2);
+  background: rgba(201, 161, 74, 0.1);
+  border-color: rgba(201, 161, 74, 0.2);
   color: var(--gold-bright);
 }
 
@@ -697,7 +697,7 @@ body::after {
 }
 
 .gear-card:hover {
-  border-color: rgba(201, 168, 76, 0.15);
+  border-color: rgba(201, 161, 74, 0.15);
 }
 
 .gear-card-label {
@@ -778,7 +778,7 @@ body::after {
 /* --- CALLOUT --- */
 .callout {
   border-left: 3px solid var(--ember);
-  background: rgba(232, 93, 38, 0.05);
+  background: rgba(255, 90, 31, 0.05);
   padding: 12px 16px;
   border-radius: 0 7px 7px 0;
   margin: 14px 0;
@@ -787,7 +787,7 @@ body::after {
 
 .callout.warning {
   border-left-color: var(--blood-bright);
-  background: rgba(212, 64, 64, 0.05);
+  background: rgba(196, 48, 48, 0.05);
 }
 
 .callout-label {
@@ -811,36 +811,64 @@ body::after {
   color: var(--vellum-bright);
   margin: 24px 0 10px;
   padding-bottom: 5px;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+  border-bottom: 1px solid rgba(201, 161, 74, 0.08);
 }
 
 /* --- TIER TABLE --- */
-.tier-table {
-  width: 100%;
-  border-collapse: collapse;
+/* --- LEDGER ROWS (Tier List) --- */
+.ledger {
   margin: 20px 0;
-  font-size: 0.82rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
-.tier-table th {
+.ledger-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-left: 1px solid var(--gold-deep);
+  background: var(--stone);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.ledger-row:hover {
+  border-left-width: 3px;
+  transform: translateY(-2px);
+  background: var(--stone-2);
+}
+
+.ledger-rank {
   font-family: var(--f-display);
-  font-size: 0.48rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  text-align: left;
-  padding: 9px 10px;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold-bright);
+  min-width: 48px;
+  text-align: center;
+  line-height: 1;
 }
 
-.tier-table td {
-  padding: 9px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  vertical-align: top;
+.ledger-class {
+  font-family: var(--f-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  min-width: 100px;
 }
 
-.tier-table tr:hover td {
-  background: rgba(255, 255, 255, 0.015);
+.ledger-build {
+  font-family: var(--f-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--vellum-bright);
+  flex: 1;
+}
+
+.ledger-meta {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  color: var(--vellum-dim);
 }
 
 /* --- ENDGAME CHECKLIST --- */
@@ -911,7 +939,7 @@ body::after {
 .link-table a {
   color: var(--gold);
   text-decoration: none;
-  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  border-bottom: 1px solid rgba(201, 161, 74, 0.2);
 }
 
 .link-table a:hover {
@@ -937,8 +965,8 @@ body::after {
 }
 
 .tag.tier-s {
-  background: rgba(201, 168, 76, 0.1);
-  border-color: rgba(201, 168, 76, 0.2);
+  background: rgba(201, 161, 74, 0.1);
+  border-color: rgba(201, 161, 74, 0.2);
   color: var(--gold-bright);
 }
 
@@ -951,7 +979,7 @@ body::after {
 .footer {
   padding: 50px 0;
   text-align: center;
-  border-top: 1px solid rgba(201, 168, 76, 0.06);
+  border-top: 1px solid rgba(201, 161, 74, 0.06);
 }
 
 .footer p {
@@ -1008,9 +1036,9 @@ body::after {
 }
 
 .login-btn:hover {
-  background: rgba(201, 168, 76, 0.1);
+  background: rgba(201, 161, 74, 0.1);
   border-color: var(--gold);
-  box-shadow: 0 0 8px rgba(201, 168, 76, 0.15);
+  box-shadow: 0 0 8px rgba(201, 161, 74, 0.15);
 }
 
 .user-menu {
@@ -1211,7 +1239,7 @@ body::after {
 .build-editor-select:focus,
 .build-editor-textarea:focus {
   border-color: var(--gold-deep);
-  box-shadow: 0 0 6px rgba(201, 168, 76, 0.1);
+  box-shadow: 0 0 6px rgba(201, 161, 74, 0.1);
 }
 
 .build-editor-select {
@@ -1260,7 +1288,7 @@ body::after {
 }
 
 .build-editor-toggle input:checked ~ .build-editor-toggle-track {
-  background: rgba(232, 93, 38, 0.3);
+  background: rgba(255, 90, 31, 0.3);
   border-color: var(--ember-deep);
 }
 
@@ -1370,7 +1398,7 @@ body::after {
 
 .build-editor-submit:hover:not(:disabled) {
   background: var(--ember-deep);
-  box-shadow: 0 0 12px rgba(232, 93, 38, 0.2);
+  box-shadow: 0 0 12px rgba(255, 90, 31, 0.2);
 }
 
 .build-editor-submit:disabled {
@@ -1398,7 +1426,7 @@ body::after {
 }
 
 .build-editor-error {
-  background: rgba(212, 64, 64, 0.1);
+  background: rgba(196, 48, 48, 0.1);
   border: 1px solid var(--blood-bright);
   border-radius: 4px;
   padding: 10px 14px;
@@ -1436,7 +1464,7 @@ body::after {
 }
 
 .skill-picker-slot.is-passive {
-  border-color: rgba(201, 168, 76, 0.15);
+  border-color: rgba(201, 161, 74, 0.15);
 }
 
 .skill-picker-slot-header {
@@ -1751,7 +1779,7 @@ body::after {
 }
 
 .build-detail-tag-visibility {
-  border-color: rgba(201, 168, 76, 0.2);
+  border-color: rgba(201, 161, 74, 0.2);
   color: var(--gold-deep);
 }
 
@@ -1819,7 +1847,7 @@ body::after {
 }
 
 .build-card:hover {
-  border-color: rgba(201, 168, 76, 0.2);
+  border-color: rgba(201, 161, 74, 0.2);
   border-left-color: inherit;
 }
 
@@ -2008,7 +2036,7 @@ body::after {
 
 .vote-button-active {
   border-color: var(--ember);
-  background: rgba(232, 93, 38, 0.1);
+  background: rgba(255, 90, 31, 0.1);
 }
 
 .vote-button-icon {
@@ -2263,7 +2291,7 @@ body::after {
 .build-feed-filter-active {
   border-color: var(--gold);
   color: var(--gold);
-  background: rgba(201, 168, 76, 0.08);
+  background: rgba(201, 161, 74, 0.08);
 }
 
 .build-feed-sort {
@@ -2317,7 +2345,7 @@ body::after {
 }
 
 .build-feed-search-btn:hover {
-  background: rgba(201, 168, 76, 0.1);
+  background: rgba(201, 161, 74, 0.1);
   border-color: var(--gold);
 }
 
@@ -2381,7 +2409,7 @@ body::after {
 }
 
 .pagination-btn:hover {
-  background: rgba(201, 168, 76, 0.1);
+  background: rgba(201, 161, 74, 0.1);
   border-color: var(--gold);
 }
 
