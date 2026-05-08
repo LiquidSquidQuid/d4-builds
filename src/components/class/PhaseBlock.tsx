@@ -1,31 +1,27 @@
 import type { PhaseData } from '@/lib/types/classes';
+import ScrollReveal from '@/components/ui/ScrollReveal';
+
+const ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
 
 interface PhaseBlockProps {
   phase: PhaseData;
-  colorVar: string;
+  colorVar?: string;
+  direction?: 'left' | 'right';
 }
 
-export default function PhaseBlock({ phase, colorVar }: PhaseBlockProps) {
+export default function PhaseBlock({ phase, direction }: PhaseBlockProps) {
   return (
-    <div className="phase-block card">
-      <div className="phase-header">
-        <div
-          className="phase-number"
-          style={{
-            background: `rgba(0, 0, 0, 0.3)`,
-            color: colorVar,
-            border: `1px solid ${colorVar}`,
-          }}
-        >
-          {phase.number}
+    <ScrollReveal direction={direction}>
+      <div className="phase">
+        <div className="phase-tag">
+          <div className="phase-roman">{ROMAN[phase.number] ?? phase.number}</div>
+          <div className="phase-name">{phase.title}</div>
+          <div className="phase-range">{phase.levels}</div>
         </div>
-        <span className="phase-title">{phase.title}</span>
-        <span className="phase-levels">{phase.levels}</span>
+        <div className="phase-body-text">
+          <div dangerouslySetInnerHTML={{ __html: phase.body }} />
+        </div>
       </div>
-      <div
-        className="phase-body"
-        dangerouslySetInnerHTML={{ __html: phase.body }}
-      />
-    </div>
+    </ScrollReveal>
   );
 }

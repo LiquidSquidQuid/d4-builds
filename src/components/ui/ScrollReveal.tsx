@@ -5,9 +5,15 @@ import { useEffect, useRef } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
+  direction?: 'up' | 'left' | 'right';
 }
 
-export default function ScrollReveal({ children, className }: ScrollRevealProps) {
+const DIRECTION_CLASS: Record<string, string> = {
+  left: 'from-left',
+  right: 'from-right',
+};
+
+export default function ScrollReveal({ children, className, direction }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,7 +35,8 @@ export default function ScrollReveal({ children, className }: ScrollRevealProps)
     return () => observer.disconnect();
   }, []);
 
-  const combinedClass = ['reveal', className].filter(Boolean).join(' ');
+  const dirClass = direction ? DIRECTION_CLASS[direction] : undefined;
+  const combinedClass = ['reveal', dirClass, className].filter(Boolean).join(' ');
 
   return (
     <div className={combinedClass} ref={ref}>
