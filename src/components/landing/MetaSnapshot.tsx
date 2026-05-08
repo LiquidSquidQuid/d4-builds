@@ -18,7 +18,7 @@ interface MetaSnapshotProps {
 
 export default function MetaSnapshot({ tiers }: MetaSnapshotProps) {
   return (
-    <section className="section" id="meta">
+    <section className="section" id="meta" data-nav-target="meta">
       <div className="container">
         <ScrollReveal>
           <span className="eyebrow">I &middot; Season 13 &middot; Consensus Tier List</span>

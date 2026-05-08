@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { User } from '@supabase/supabase-js';
 import { createClient } from '@/lib/supabase/client';
+import { onActiveNavChange } from '@/lib/scroll-engine';
 import LoginButton from '@/components/auth/LoginButton';
 import UserMenu from '@/components/auth/UserMenu';
 
@@ -24,6 +25,7 @@ const navLinks: { label: string; href: string; colorVar: string }[] = [
 export default function StickyNav() {
   const navRef = useRef<HTMLElement>(null);
   const [user, setUser] = useState<User | null>(null);
+  const [activeSection, setActiveSection] = useState('');
   const supabase = createClient();
 
   useEffect(() => {
@@ -38,6 +40,11 @@ export default function StickyNav() {
     );
 
     return () => subscription.unsubscribe();
+  }, []);
+
+  // Active nav tracking from scroll engine
+  useEffect(() => {
+    onActiveNavChange((id) => setActiveSection(id));
   }, []);
 
   useEffect(() => {
@@ -75,17 +82,21 @@ export default function StickyNav() {
     <nav className="nav" ref={navRef}>
       <div className="nav-inner">
         <span className="nav-brand">D4 Builds</span>
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="nav-link"
-            style={{ borderLeftColor: link.colorVar }}
-            onClick={(e) => handleNavClick(e, link.href)}
-          >
-            {link.label}
-          </a>
-        ))}
+        {navLinks.map((link) => {
+          const sectionId = link.href.replace('#', '');
+          const isActive = activeSection === sectionId;
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`nav-link ${isActive ? 'nav-link-active' : ''}`}
+              style={{ borderLeftColor: link.colorVar }}
+              onClick={(e) => handleNavClick(e, link.href)}
+            >
+              {link.label}
+            </a>
+          );
+        })}
         <div className="nav-auth">
           <Link href="/builds" className="nav-builds-link">
             Builds

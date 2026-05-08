@@ -5,6 +5,7 @@ import "./globals.css";
 import StickyNav from "@/components/layout/StickyNav";
 import EmberParticles from "@/components/layout/EmberParticles";
 import ProgressBar from "@/components/layout/ProgressBar";
+import ScrollEngine from "@/components/layout/ScrollEngine";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <ProgressBar />
         <EmberParticles />
+        <ScrollEngine />
         <StickyNav />
         {children}
         <Footer />

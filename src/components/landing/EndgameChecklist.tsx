@@ -7,7 +7,7 @@ interface EndgameChecklistProps {
 
 export default function EndgameChecklist({ steps }: EndgameChecklistProps) {
   return (
-    <section className="section" id="endgame">
+    <section className="section" id="endgame" data-nav-target="endgame">
       <div className="container">
         <ScrollReveal>
           <span className="eyebrow">III &middot; The Long Road Ahead</span>

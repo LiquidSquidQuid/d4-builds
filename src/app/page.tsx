@@ -1,8 +1,8 @@
 import Hero from "@/components/landing/Hero";
 import MetaSnapshot from "@/components/landing/MetaSnapshot";
-import LevelingTips from "@/components/landing/LevelingTips";
+import PinnedTipsDeck from "@/components/landing/PinnedTipsDeck";
+import PinnedClassShowcase from "@/components/landing/PinnedClassShowcase";
 import EndgameChecklist from "@/components/landing/EndgameChecklist";
-import ClassSection from "@/components/class/ClassSection";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 import { classData } from "@/lib/constants/classes";
@@ -25,19 +25,17 @@ const CLASS_ORDER: D4Class[] = [
 ];
 
 export default function Home() {
+  const classEntries = CLASS_ORDER.map(slug => ({ slug, data: classData[slug] }));
+
   return (
     <>
       <Hero />
       <div className="rule with-mark"><span className="rule-mark" /></div>
       <MetaSnapshot tiers={tierData} />
       <div className="rule" />
-      <LevelingTips tips={tipsData} />
+      <PinnedTipsDeck tips={tipsData} />
       <div className="rule with-mark"><span className="rule-mark" /></div>
-
-      {CLASS_ORDER.map((slug) => (
-        <ClassSection key={slug} data={classData[slug]} />
-      ))}
-
+      <PinnedClassShowcase classes={classEntries} />
       <div className="rule with-mark"><span className="rule-mark" /></div>
       <EndgameChecklist steps={endgameSteps} />
 
